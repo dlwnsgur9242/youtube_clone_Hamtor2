@@ -13,10 +13,13 @@ html 최적화 측면에서 속도가 더 빠름
 :root {
     /* color */
     --white-color: #fff;
+    --black-color: #140a00;
+    --blue-color: #045fd4;
+    --red-color: #ff0000;
     --grey-light-color: #e0e0e0;
 
     /* size */
-    --padding: 12px;
+    --padding-sidebar: 8px 8px 8px 24px;
     --avatar-size: 36px;
 
     /* font size */
@@ -50,6 +53,8 @@ html 최적화 측면에서 속도가 더 빠름
     width: 100%;
     height: 10%;
     border: 1px solid orange;
+    background-color: var(--black-color);
+    color: var(--white-color);
 }
 
 #Yellow {
@@ -62,6 +67,7 @@ html 최적화 측면에서 속도가 더 빠름
     width: 20%;
     height: 100%;
     border: 1px solid green;
+    padding: var(--padding-sidebar);
 }
 
 #Skyblue {
