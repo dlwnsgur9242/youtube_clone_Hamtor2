@@ -14,6 +14,15 @@
             background-color: #413e3e;
             padding: 5px; 
         }
+        #Green {
+            display: flex;
+            flex-direction: column; /* 수직으로 요소들을 쌓음 */
+            height: 100%; /* 컨테이너를 뷰포트 전체 높이로 설정 */
+            background-color: #413e3e; /* 왼쪽 사이드바 스타일링 */
+            width: 200px;
+            padding: 20px;
+            margin-right: 5px;
+        }
 
         #nav_but, #nav_search,
         #nav_search_Box, #nav_profile{
@@ -114,29 +123,38 @@
         </div>
         <div id="Yellow" class="div-flex-row">
             <!-- div id="Green"은 사이드 바 입니다. 구조만 만들어 둔 상태 입니다.(추가 작업 필요) -->
-            <div id="Green" class="div-flex-column"></div>
-                <div id="nav_Footer">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+            <div id="Green" class="div-flex-column">
+                <div id="Sid_Top">
+                    <div><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-1.home-fill.svg" alt="Sidebar-Top-1.home-fill Icon">HOME</div>
+                    <div><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-2.explore.svg" alt="Sidebar-Top-2.explore Icon">Explore</div>
+                    <div><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-3.subscriptions.svg"alt="Sidebar-Top-3.subscriptions Icon">Subscriptions</div>
                 </div>
-                <div id="nav_Btu">
+                <div id="Sid_Top-2">
+                    <div>
+                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-1.library.svg"alt="Sidebar-Top2-1.library Icon">Library</div>
+                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-2.history.svg"alt="history Icon">History</div>
+                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-3.yourVideos.svg"alt="yourVideos Icon">YourVideos</div>
+                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-4.watchLater.svg"alt="watchLater Icon">WatchLater</div>
+                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-5.liked.svg"alt="liked Icon">Liked</div>
+                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-6.arrowBottom(Show More).svg"alt="arrowBottom Icon">ArrowBottom</div>
+                    </div>
+                </div>
+                <div id="Sid_Subscrip">
                     <div></div>
                 </div>
                 <div id="Sid_More-From">
                     <div></div>
                 </div>
-                <div id="Sid_Subscrip">
+                <div id="nav_Btu">
                     <div></div>
                 </div>
-                <div id="Sid_Top-2">
+                <div id="nav_Footer">
                     <div></div>
+                    <div></div>
+                    <div></div>
+                
                 </div>
-                <div id="Sid_Top">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+            </div>
             <div id="Skyblue" class="div-flex-column">
                 <div id="Blu" class="div-flex-row"></div>
                 <div id="Purple" class="div-flex-row"></div>
