@@ -1,0 +1,84 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap');
+
+
+/*
+폰트 적용 다른 방법 @html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+html 최적화 측면에서 속도가 더 빠름
+*/
+
+:root {
+    /* color */
+    --white-color: #fff;
+    --grey-light-color: #e0e0e0;
+
+    /* size */
+    --padding: 12px;
+    --avatar-size: 36px;
+
+    /* font size */
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+}
+
+.div-flex-row {  /* --> Orange, Yellow, Blue, Purple */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.div-flex-column {  /* --> Red, Green, Skyblue */ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#Red {
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+#Orange {
+    width: 100%;
+    height: 10%;
+    border: 1px solid orange;
+}
+
+#Yellow {
+    width: 100%;
+    height: 90%;
+    border: 1px solid yellow;
+}
+
+#Green {
+    width: 20%;
+    height: 100%;
+    border: 1px solid green;
+}
+
+#Skyblue {
+    width: 80%;
+    height: 100%;
+    border: 1px solid skyblue;
+}
+
+#Blue {
+    width: 100%;
+    height: 10%;
+    border: 1px solid blue;
+}
+
+#Purple {
+    flex-wrap: wrap;
+    width: 100%;
+    height: 90%;
+    border: 1px solid purple;
+}
