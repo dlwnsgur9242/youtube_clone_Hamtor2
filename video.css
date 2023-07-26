@@ -1,0 +1,19 @@
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    padding: 0px 164px 0px 162px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary {
+    width: 60%;
+    height: 100%;
+    padding: 24px 0px 0px 24px;
+}
+
+.secondary {
+
+}
