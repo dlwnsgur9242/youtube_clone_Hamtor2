@@ -1,0 +1,61 @@
+
+
+.channel-container {   /* red box (채널페이지 전체 섹션) */
+    width: 80%;
+    height: 100%;
+}
+
+.channel-cover {    /* yellow box */
+    width: 100%;
+    height: 20%;
+    background-image: url("./image/Channel/Cover.svg");
+}
+
+/* 이 아래부터는 channel.html 작업 끝나면 세부적으로 조정해주세요 */
+
+.channel-title {
+    width: 100%;
+    height: 10%;
+    padding: 16px 65px 0px 65px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.channel-content {
+    width: 100%;
+    height: 70%;
+}
+
+.channel-toolbar {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 0px 65px 0px 65px;
+}
+
+.small-video {
+    width: 100%;
+    height: 35%;
+    padding: 24px 287px 24px 65px;
+}
+
+.play-list-one {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 0px 65px 0px 65px;
+}
+
+.play-list-two {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 0px 65px 0px 65px;
+}
