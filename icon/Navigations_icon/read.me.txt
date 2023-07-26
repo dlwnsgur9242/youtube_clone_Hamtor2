@@ -1,2 +1,0 @@
-left는 Navigations 기준으로 왼쪽
-rigtht는 Naviagations 기준으로 오른쪽을 의미합니다.
