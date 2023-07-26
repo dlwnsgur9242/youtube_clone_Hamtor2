@@ -40,7 +40,7 @@
     Line 3: 본문
             - What, Why 등 작성
 
-### camelCase 사용
+# camelCase 사용
 
 ### 변수 사용 룰 (아래 셋 중 선정 필요)
     - Button vs Btn (자음만)
