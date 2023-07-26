@@ -95,17 +95,21 @@
                     <a href="https://www.youtube.com/"><img src="img//YouTube_Logo.jpg" alt="YouTube Logo"></a>
                 </div>
             </div>
-            <div id="nav_search">
-                <div id="nav_search_Box">
-                    <div id="nav_search_Place">
-                        <input type="text" id="search_input" placeholder="Search">
+            <div id="nav_searchBox">
+                <div id="nav_search_Box_Area">
+                    <div id="nav_search_Box">
+                        <div id="nav_search_Place">
+                            <input type="text" id="search_input" placeholder="Search">
+                        </div>
                     </div>
-                    <div id="nav_search_box_icon">
-                        <a href="#"><img src="img//search.jpg" alt="search Icon"></a>
+                    <div id="nav_search_Box_But">
+                        <div id="nav_search_Box_But_icon">
+                            <a href="#"><img src="icon//Navigations_icon//Navigations-search//Navigations-search-searchbutton.svg" alt="search Icon"></a>
+                        </div>
                     </div>
                 </div>
-                <div id="nav_search_icon">
-                    <a href="#"><img src="img//mic.jpg" alt="mic Icon"></a>
+                <div id="nav_search_mic_icon">
+                    <img src="img//mic.jpg" alt="mic Icon">
                 </div>
             </div>
             <div id="nav_profile">
@@ -127,34 +131,103 @@
             <!-- div id="Green"은 사이드 바 입니다. 구조만 만들어 둔 상태 입니다.(추가 작업 필요) -->
             <div id="Green" class="div-flex-column">
                 <div id="Sid_Top">
-                    <div><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-1.home-fill.svg" alt="Sidebar-Top-1.home-fill Icon">HOME</div>
-                    <div><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-2.explore.svg" alt="Sidebar-Top-2.explore Icon">Explore</div>
-                    <div><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-3.subscriptions.svg"alt="Sidebar-Top-3.subscriptions Icon">Subscriptions</div>
+                    <div id="1" >
+                        <div id="Home_icon"><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-1.home-fill.svg" alt="Sidebar-Top-1.home-fill Icon"></div>
+                        <div id="Home_name">HOME</div>
+                    </div>
+                    <div id="2">
+                        <div id="Explore_icon"><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-2.explore.svg" alt="Sidebar-Top-2.explore Icon"></div>
+                        <div id="Explore_name">Explore</div>
+                    </div>
+                    <div id="3">
+                        <div id="Subscriptions_name"><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-3.subscriptions.svg"alt="Sidebar-Top-3.subscriptions Icon">
+                        <div id="Subscriptions_name">Subscriptions</div>                        
+                    </div>
                 </div>
                 <hr>
                 <div id="Sid_Top-2">
                     <div>
-                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-1.library.svg"alt="Sidebar-Top2-1.library Icon">Library</div>
-                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-2.history.svg"alt="history Icon">History</div>
-                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-3.yourVideos.svg"alt="yourVideos Icon">YourVideos</div>
-                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-4.watchLater.svg"alt="watchLater Icon">WatchLater</div>
-                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-5.liked.svg"alt="liked Icon">Liked</div>
-                        <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-6.arrowBottom(Show More).svg"alt="arrowBottom Icon">ArrowBottom</div>
+                        <div id="1">
+                            <div id="library_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-1.library.svg"alt="Sidebar-Top2-1.library Icon"></div>
+                            <div id="library_Icon_name">Library</div>
+                        </div>
+                        <div id="2">
+                            <div id="history_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-2.history.svg"alt="history Icon"></div>
+                            <div id="history_Icon_name">History</div>
+                        </div>
+                        <div id="3">
+                            <div id="yourVideos_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-3.yourVideos.svg"alt="yourVideos Icon"></div>
+                            <div id="yourVideos_Icon_name">YourVideos</div>
+                        </div>
+                        <div id="4">
+                            <div id="watchLater_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-4.watchLater.svg"alt="watchLater Icon"></div>
+                            <div id="watchLater_Icon_name">WatchLater</div>
+                        </div>
+                        <div id="5">
+                            <div id="liked_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-5.liked.svg"alt="liked Icon"></div>
+                            <div id="liked_Icon_name">Liked</div>
+                        </div>
+                        <div id="6">
+                            <div id="arrowBottom_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-6.arrowBottom(Show More).svg"alt="arrowBottom Icon"></div>
+                            <div id="arrowBottom_Icon_name">ArrowBottom</div>
+                        </div>
                     </div>
                 </div>
                 <hr>
                 <div id="Sid_Subscrip">
                     <div><h1>SUBSCRIPTIONS</h1></div>
-                    <!-- <div><img src="icon//UserAvatar//UserAvatar-AlanCooper.jpg"alt="James Gouse">James Gouse</div> -->
+                    <!-- 
+                        <div id="1">
+                            <div id="JamesGouse_icon"><img src="icon\UserAvatar\UserAvatar-JamesGouse.jpg"alt="James Gouse"></div>
+                            <div id="JamesGouse_name">James Gouse</div>
+                        </div> 
+                        <div id="2">
+                            <div id="AlanCooper_icon"><img src="icon\UserAvatar\UserAvatar-AlanCooper.jpg" alt="Alan Cooper"></div>
+                            <div id="AlanCooper_name">Alan Cooper</div>
+                        </div> 
+                        <div id="3">
+                            <div id="MarcusLevin_icon"><img src="icon\UserAvatar\UserAvatar-MarcusLevin.jpg"alt="Marcus Levin"></div>
+                            <div id="MarcusLevin_name">James Gouse</div>
+                        </div> 
+                        <div id="4">
+                            <div id="AlexisSears_icon"><img src="icon\UserAvatar\UserAvatar-AlexisSears.jpg"alt="-Alexis Sears"></div>
+                            <div id="AlexisSears_name">James Gouse</div>
+                        </div> 
+                        <div id="5">
+                            <div id="JesicaLambert_icon"><img src="icon\UserAvatar\UserAvatar-JesicaLambert.jpg" alt="Jesica Lambert"></div>
+                            <div id="JesicaLambert_name">Jesica Lambert</div>
+                        </div> 
+                        <div id="6">
+                            <div id="AnnaWhite_icon"><img src="icon\UserAvatar\UserAvatar-AnnaWhite.jpg" alt="Anna White"></div>
+                            <div id="AnnaWhite_name">Anna White</div>
+                        </div> 
+                        <div id="7">
+                            <div id="SkylarDias_icon"><img src="icon\UserAvatar\UserAvatar-SkylarDias.jpg"alt="Skylar Dias"></div>
+                            <div id="SkylarDias_name">Skylar Dias</div>
+                        </div> 
+                    해당 부분 사진 크기가 너무커서 주석처리했습니다
+                    -->
                     <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-6.arrowBottom(Show More).svg"alt="arrowBottom Icon">ArrowBottom</div>
                 </div>
                 <hr>
                 <div id="Sid_More-From">
                     <div><h1>More FROM YOUTUBE</h1></div>
-                    <div><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-1.premium.svg"alt="1.premium">Youtube Premium</div>
-                    <div><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-2.Gaming.svg"alt="2.Gaming">Gaming</div>
-                    <div><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-3.live.svg"alt="3.Live">Live</div>
-                    <div><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-4.sports.svg"alt="4.Sports">Sports</div>
+                    <div id="1">
+                        <div id="Youtube_Premium_icon"><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-1.premium.svg"alt="1.premium"></div>
+                        <div id="Youtube_Premium_name">Youtube Premium</div>
+                    </div>
+                    <div id="2">
+                        <div id="Gaming_icon"><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-2.Gaming.svg"alt="2.Gaming"></div>
+                        <div id="Gaming_name">Gaming</div>
+                    </div>
+                    <div id="3">
+                        <div id="Live_icon"><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-3.live.svg"alt="3.Live"></div>
+                        <div id="Live_name">Live</div>
+                    </div>
+                    <div id="4">
+                        <div id="Sports_icon"><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-4.sports.svg"alt="4.Sports"></div>
+                        <div id="Sports_name">Sports</div>
+                    </div>
                 </div>
                 <div id="nav_Btu">
                     <div></div>
@@ -167,19 +240,16 @@
                 </div>
             </div>
             <div id="Skyblue" class="div-flex-column">
-                <div id="Blu" class="div-flex-row">
+                <div id="Blue" class="div-flex-row">
                     <div class="filters">
-                        <button active >all</button>
-                        <button >CSS</button>
-                        <button >web development</button>
-                        <button >python</button>
-                        <button >entertainment</button>
-                        <button >marvel</button>
-                        <button >javascript</button>
-                        <button >artificial intelligence</button>
-                        <button >machine learning</button>
-                        <button >trending</button>
-                    </div>>
+                        <button active ><img src="icon\Top-Menu_icon\Top-Menu-Item(All).png"alt="Top-Menu-Item(All)"></button>
+                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
+                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
+                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
+                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
+                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
+                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
+                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>  
                 </div>
                 <div id="Purple" class="div-flex-row">
                     <div class="video-container">
