@@ -1,11 +1,11 @@
 
 
-.channel-container {   /* red box (채널페이지 전체 섹션) */
+.channel-container {   /* channel 페이지의 전체 section (nav & sidebar 제외) */
     width: 80%;
     height: 100%;
 }
 
-.channel-cover {    /* yellow box */
+.channel-cover {    /* .channel-container의 하위 1번 */
     width: 100%;
     height: 20%;
     background-image: url("./image/Channel/Cover.svg");
@@ -13,7 +13,7 @@
 
 /* 이 아래부터는 channel.html 작업 끝나면 세부적으로 조정해주세요 */
 
-.channel-title {
+.channel-title {    /* .channel-container의 하위 2번 */
     width: 100%;
     height: 10%;
     padding: 16px 65px 0px 65px;
@@ -22,12 +22,12 @@
     align-content: center;
 }
 
-.channel-content {
+.channel-content {    /* .channel-container의 하위 3번 */
     width: 100%;
     height: 70%;
 }
 
-.channel-toolbar {
+.channel-toolbar {    /* .channel-content의 하위 1번 */
     width: 100%;
     height: 5%;
     display: flex;
@@ -36,13 +36,13 @@
     padding: 0px 65px 0px 65px;
 }
 
-.small-video {
+.small-video {    /* .channel-content의 하위 2번 */
     width: 100%;
     height: 35%;
     padding: 24px 287px 24px 65px;
 }
 
-.play-list-one {
+.play-list-one {    /* .channel-content의 하위 3번 */
     width: 100%;
     height: 30%;
     display: flex;
@@ -51,7 +51,7 @@
     padding: 0px 65px 0px 65px;
 }
 
-.play-list-two {
+.play-list-two {    /* .channel-content의 하위 4번 */
     width: 100%;
     height: 30%;
     display: flex;
