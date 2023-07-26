@@ -1,3 +1,9 @@
+/*
+    아직 video.html 이 생성되지 않아 피그마의 레이어 명으로 클래스를 명명했습니다.
+    video 페이지에서는 nav 제외하고 section 부분을 우선 크게 좌측 primary 와 우측 secondary로 나눴습니다.
+    primary와 secondary 안에서 또 크게 나누어 구조는 잡았지만, html이 잡히면 세부 조정이 필요할 것 같습니다.
+*/
+
 
 .video-container {   /* video 페이지의 전체 section */
     width: 100%;
@@ -36,4 +42,16 @@
     width: 100%;
     height: 30%;
     padding: 0px 0px 0px 0px;
+}
+
+.top-menu {   /* secondary의 하위 1번 */
+    width: 100%;
+    height: 5%;
+    padding: 2px 12px 2px 0px;
+}
+
+.videos {   /* secondary의 하위 2번 */
+    width: 100%;
+    height: 95%;
+    padding: 8px;
 }
