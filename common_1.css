@@ -53,18 +53,17 @@ html, body {
 }
 
 #Orange {
-    width: 100%;
-    height: 56px;
     border: 1px solid orange;
-    background: var(--background-color, #212121);
-    color: var(--white-color);
+    padding: 0 16px;
     display: flex;
-    flex-direction: row; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 5px; 
-
-}
+    justify-content: space-between;
+    height: 56px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #212121;
+  }
 /*youtube 로고 버튼*/
 #nav_but{
     display: inline-flex;
@@ -80,6 +79,7 @@ html, body {
     align-items: flex-start;
     gap: 4px;
     flex-shrink: 0;
+    
 }
 /*상단 검색창*/
 #nav_search_Box_Area{
@@ -159,11 +159,39 @@ html, body {
 
 /* hamburger 아이콘 */
 #nav_but_icon{
+    width: 20px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+#nav_but_icon span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #979797;
+}
+
+#nav_but_icon span:nth-child(1){
+    top: 0;
+}
+
+#nav_but_icon span:nth-child(3){
+    top: 100%;
+}
+
+/* #nav_but_icon{
     display: flex;
     padding: 8px;
     align-items: flex-start;
     gap: 10px;
-}
+    width: 20px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+} */
 #nav_but_icon img{
     width: 24px;
     height: 24px;
@@ -183,13 +211,12 @@ html, body {
 }
 /*상단 검색창*/
 #nav_search_Place {
-    display: flex;
-    width: 54px;
-    height: 31px;
-    padding: 6px 2px;
-    align-items: flex-start;
-    gap: 10px;
-    flex-shrink: 0;
+    width: 85%;
+    height: 100%;
+    border: 2px solid #dbdbdb;
+    padding: 0 20px;
+    font-size: 16px;
+    text-transform: capitalize;
 }
 
 /* 검색 입력란 스타일링 */
@@ -204,12 +231,12 @@ html, body {
 /* 상단 search 아이콘 박스*/
 #nav_search_Box_But{
     display: flex;
-    width: 50px;
-    height: 36px;
-    padding: 6px 13px;
-    justify-content: center;
-    align-items: center;
-    background: #303030;
+    width: 15%;
+    height: 100%;
+    background: #f0f0f0;
+    border: 2px solid #dbdbdb;
+    padding: 5px 0;
+    border-left: none;
 }
 
 /*search 아이콘*/
@@ -241,29 +268,27 @@ html, body {
 }
 
 #Yellow {
+    margin-top: 60px; /* #Orange의 높이만큼 여백을 주어 #Yellow를 아래로 밀어줍니다 */
     width: 100%;
     height: 90%;
     border: 1px solid yellow;
     display: flex;
     flex-wrap: wrap;
     position: relative;
-}
+  }
 /* sidebar */
 #Green {
-    width: 200px; 
-    height: 100%;
     border: 1px solid green;
-    background-color: #413e3e;
-    padding: var(--padding-sidebar);
-    padding-right: 0px;
-    display: flex;
-    flex-direction: 
-    column; padding: 16px;
-    margin-right: 5px;
-    position: absolute;
+    width: 240px;
+    position: fixed;
+    top: 56px;
     left: 0;
-    top: 0;
-    flex-shrink: 0;
+    bottom: 0;
+    padding: 12px 0;
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
+    background-color: #212121;
+    color: #fff;
 }
 
 #Sid_Top {
@@ -295,6 +320,19 @@ html, body {
     align-items: flex-start;
     gap: 12px;
 }
+/* 사이드 배 내부에있는 버튼들 */
+#links {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: #242424;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
 
 #nav_Btu {
         display: flex;
@@ -315,13 +353,48 @@ html, body {
 #Skyblue {
     width: 80%;
     height: 100%;
+    left:250px;
     border: 1px solid skyblue;
 }
 
 #Blue {
-    width: 100%;
+    width: 80%;
+    left:250px;
     height: 10%;
     border: 1px solid blue;
+}
+
+.Top_Menu {
+    position: fixed;
+    top: 56px;
+    width: 100%;
+    height: 60px;
+    left:240px;
+    right:0;
+    background-color: #413e3e;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.Top_Menu-options.active{
+    color: #fff;
+    background: #242424;
+}
+.Top_Menu-options{
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: #f0f0f0;
+    border: 1px solid #dbdbdb;
+    text-transform: capitalize;
+    margin-right: 10px;
+    color: #242424;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 #Purple {
