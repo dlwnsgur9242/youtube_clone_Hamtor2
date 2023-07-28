@@ -1,42 +1,75 @@
-function getChannelInfo(video_channel) {
-    // XMLHttpRequest 객체 생성
-    let xhr = new XMLHttpRequest();
-  
-    // API 요청 설정
-    let apiUrl = `http://oreumi.appspot.com/channel/getChannelInfo`;
-    xhr.open("POST", apiUrl, true);
 
-    let jsonData = {"video_channel": video_channel}
-  
-    // 응답 처리 설정
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-        // 가져온 응답 처리
-        let response = JSON.parse(xhr.responseText);
-  
-        // 데이터 있는지 확인
-        if (response && response.channel_name !== undefined) {
-          // 각 데이터들을 콘솔에 출력
-          console.log(response.channel_name);
-          console.log(response.banner);
-          console.log(response.profile);
-          console.log(response.subscribers);
-
-        }
-      }
-    };
-  
-    // 요청 전송. POST 방식일 때는 url 형태가 아니라 json 객체 형태로 
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(jsonData));
-  }
-  
-  // id = 0부터 아이템 불러오기
-  getChannelInfo("개조");
+// function loadVideoDetail 는 home.js 처럼 비디오 세부정보 API를 가져왔고
+// function makeChannelDiv 로 Search On '21 아래 부분 div를 만들어서 loadVideoDetail을 불러왔습니다.
+// 피그마에 보시면 Search On '21이 두 번 반복되는 것처럼 보이지만, 한 개로 간주하고 아래에 비디오가 연결되어 쭉 뜨게 했습니다.
+// 채널 주인을 "oreumi"라고 생각했을 때 본인 소유의 video_id = 0부터 9까지만 뜨도록 for문의 범위를 줬습니다.
 
 
-// 
+// 비디오의 세부정보 API 불러오기
+function loadVideoDetail(data) {
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+
+        // ${data.video_id} 를 사용하여 data 객체의 video_id 값을 동적으로 넣어줌 (id # 순서대로 불러오지는 못했음)
+        xhr.open("GET", `http://oreumi.appspot.com/video/getVideoInfo?video_id=${data.video_id}`);
+        xhr.send();
+
+        xhr.onload = () => {
+            const dataDetail = JSON.parse(xhr.responseText);
+            resolve(dataDetail);
+        };
+
+        xhr.onerror = () => {
+            reject(new Error('Failed to load video detail'));
+        };
+    });
+}
+
+
+// Search On '21 아래 부분 div 만들기
 function makeChannelDiv(datas) {
 
-    const videoList = document.getElementById('미정')
+    const videoList = document.getElementById('Video_Container')  // id는 임시로 Video_Container로 입력, channel.html과 맞춰야 합니다.
+
+    for (let i = 0; i < 10; i++) { // video_id = 0부터 9까지
+        let data = datas[i];
+
+        let dataDetail = loadVideoDetail(data)
+            .then((dataDetail) => {
+
+                // 하위 클래스명은 home.js와 비슷하게 했고 css 담당자와 공유 필요합니다.
+                const thumbnailItem = document.createElement("div");
+                thumbnailItem.classList.add("thumbnail_item");
+
+                const thumbnailImages = document.createElement("img");
+                thumbnailImages.classList.add("thumbnail_images");
+                thumbnailImages.src = dataDetail.image_link;
+
+                const thumbnailDesc = document.createElement("div");
+                thumbnailDesc.classList.add("thumbnail_desc");
+
+                const thumbnailDescTitle = document.createElement("div");
+                thumbnailDescTitle.classList.add("thumbnail_desc_title");
+                thumbnailDescTitle.textContent = dataDetail.video_title;
+
+                const thumbnailDescInfo = document.createElement("div");
+                thumbnailDescInfo.classList.add("thumbnail_desc_info");
+                thumbnailDescInfo.textContent = dataDetail.video_channel;
+                thumbnailDescInfo.textContent = dataDetail.views;
+                thumbnailDescInfo.textContent = dataDetail.upload_date;
+
+
+                thumbnailDesc.appendChild(thumbnailDescTitle);
+                thumbnailDesc.appendChild(thumbnailDescInfo);
+
+                thumbnailItem.appendChild(thumbnailImages);
+                thumbnailItem.appendChild(thumbnailDesc);
+
+                videoList.appendChild(thumbnailItem);
+
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
 }
