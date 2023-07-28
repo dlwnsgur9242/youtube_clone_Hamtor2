@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="common_2.css">
 </head>
 <body>
-    <div id="Red" class="div-flex-column">   
+    <div id="Youtube_Page" class="div-flex-column">   <!-- Red -> Youtube_Page-->
         <!-- div id = "Orange"는 상단 바 입니다. -->
-        <div id="Orange" class="div-flex-row" style="background-color: #413e3e;"> 
+        <div id="Nav" class="div-flex-row" style="background-color: #413e3e;">  <!-- Orange -> Nav -->
             <div id="nav_but">
                 <div id="nav_but_icon">
                     <a href="#"><img src="img//hamburger.jpg" alt="Hamburger Icon"></a>
@@ -53,9 +53,9 @@
             </div>
         </div>
 
-        <div id="Yellow" class="div-flex-row">
+        <div id="View_Page" class="div-flex-row">   <!-- Yellow -> View_Page -->
             <!-- div id="Green"은 사이드 바 입니다. 구조만 만들어 둔 상태 입니다.(추가 작업 필요) -->
-            <div id="Green" class="div-flex-column">
+            <div id="Sidebar" class="div-flex-column"> <!-- Green -> Sidebar-->
                 <div id="Sid_Top">
                     <div id="1" >
                         <div id="Home_icon"><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-1.home-fill.svg" alt="Sidebar-Top-1.home-fill Icon"></div>
@@ -102,7 +102,6 @@
                 <hr>
                 <div id="Sid_Subscrip">
                     <div><h1>SUBSCRIPTIONS</h1></div>
-                    <!-- 
                         <div id="1">
                             <div id="JamesGouse_icon"><img src="icon\UserAvatar\UserAvatar-JamesGouse.jpg"alt="James Gouse"></div>
                             <div id="JamesGouse_name">James Gouse</div>
@@ -131,7 +130,7 @@
                             <div id="SkylarDias_icon"><img src="icon\UserAvatar\UserAvatar-SkylarDias.jpg"alt="Skylar Dias"></div>
                             <div id="SkylarDias_name">Skylar Dias</div>
                         </div> 
-                    해당 부분 사진 크기가 너무커서 주석처리했습니다
+                    <!--해당 부분 사진 크기가 너무커서 주석처리했습니다
                     -->
                     <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-6.arrowBottom(Show More).svg"alt="arrowBottom Icon">ArrowBottom</div>
                 </div>
@@ -167,9 +166,9 @@
                 </div>
             </div>
 
-            <div id="Skyblue" class="div-flex-column">
-                <div id="Blue" class="div-flex-row">
-                    <div class="filters">
+            <div id="Main_Page" class="div-flex-column"> <!-- Skyblue -> Main_Page -->
+                <div id="Top_Menu" class="div-flex-row"> <!-- Blue -> Top_Menu -->
+                    <div class="Top_Menu">
                         <button active ><img src="icon\Top-Menu_icon\Top-Menu-Item(All).png"alt="Top-Menu-Item(All)"></button>
                         <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
                         <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
@@ -181,7 +180,7 @@
                     </div>  
                 </div>
 
-                <div id="Purple" class="div-flex-row">
+                <div id="Video_Container" class="div-flex-row"> <!-- Purple -> Video_Container -->
                     <div class="video-container">
 
             
@@ -194,4 +193,10 @@
     </div>
 
 </body>
+<script src="home.js"></script>
+<script>
+    window.onload = () =>{
+        loadVideoList();
+    }
+</script>
 </html>
