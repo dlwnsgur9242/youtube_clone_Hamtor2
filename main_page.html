@@ -5,86 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
     <title>Document</title>
-    <style>
-        #Orange {
-            display: flex;
-            flex-direction: row; 
-            justify-content: space-between; 
-            align-items: center; 
-            background-color: #413e3e;
-            padding: 5px; 
-        }
-        #Green {
-            display: flex;
-            flex-direction: column; /* 수직으로 요소들을 쌓음 */
-            height: 100%; /* 컨테이너를 뷰포트 전체 높이로 설정 */
-            background-color: #413e3e; /* 왼쪽 사이드바 스타일링 */
-            width: 200px;
-            padding: 20px;
-            margin-right: 5px;
-        }
-
-        #nav_but, #nav_search,
-        #nav_search_Box, #nav_profile{
-            display: flex; 
-        }
-        #nav_but_icon, #nav_but_Logo {
-            margin-right: 5px; 
-        }
-        #nav_but_icon img{
-            width: 20px; 
-            height: 30px;
-        }
-        #nav_but_Logo img{
-            width: 80px; 
-            height: 30px;
-        }
-        #nav_search_box_icon img{
-            width: 30px; 
-            height: 30px;
-        }
-        #nav_search_icon img{
-            width: 30px; 
-            height: 30px;
-            margin-right: 5px;
-        }
-
-        #nav_profile img{
-            width: 30px;
-            height: 30px;
-        }
-        #nav_search_Place {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 10px; /* 검색바를 직사각형 모양으로 설정 */
-            padding: 5px 10px;
-            width: 400px;
-            height: 20px;
-        }
-
-        /* 검색 아이콘 스타일링 */
-        #search_icon {
-            width: 10px; /* 검색 아이콘의 너비를 조절하여 크기를 변경 */
-            height: 10px; /* 검색 아이콘의 높이를 조절하여 크기를 변경 */
-            margin-right: 5px;
-        }
-
-        /* 검색 입력란 스타일링 */
-        #search_input {
-            flex: 1;
-            border: none;
-            outline: none;
-            padding: 5px;
-            border-radius: 10px; /* 검색 입력란을 직사각형 모양으로 설정 */
-        }
-    </style>
     <link rel="stylesheet" href="common_1.css">
     <link rel="stylesheet" href="common_2.css">
 </head>
 <body>
-    <div id="Red" class="div-flex-column">
+    <div id="Red" class="div-flex-column">   
         <!-- div id = "Orange"는 상단 바 입니다. -->
         <div id="Orange" class="div-flex-row" style="background-color: #413e3e;"> 
             <div id="nav_but">
@@ -127,6 +52,7 @@
                 </div>
             </div>
         </div>
+
         <div id="Yellow" class="div-flex-row">
             <!-- div id="Green"은 사이드 바 입니다. 구조만 만들어 둔 상태 입니다.(추가 작업 필요) -->
             <div id="Green" class="div-flex-column">
@@ -238,7 +164,9 @@
                     <div></div>
                 
                 </div>
+                </div>
             </div>
+
             <div id="Skyblue" class="div-flex-column">
                 <div id="Blue" class="div-flex-row">
                     <div class="filters">
@@ -249,15 +177,21 @@
                         <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
                         <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
                         <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
-                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>  
+                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
+                    </div>  
                 </div>
+
                 <div id="Purple" class="div-flex-row">
                     <div class="video-container">
 
+            
                     </div>
                 </div>
             </div>
+
         </div>
+        
     </div>
+
 </body>
 </html>
