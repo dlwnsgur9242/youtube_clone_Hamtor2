@@ -1,98 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
     <title>Document</title>
-    <style>
-        #Orange {
-            display: flex;
-            flex-direction: row; 
-            justify-content: space-between; 
-            align-items: center; 
-            background-color: #413e3e;
-            padding: 5px; 
-        }
-        #Green {
-            display: flex;
-            flex-direction: column; /* 수직으로 요소들을 쌓음 */
-            height: 100%; /* 컨테이너를 뷰포트 전체 높이로 설정 */
-            background-color: #413e3e; /* 왼쪽 사이드바 스타일링 */
-            width: 200px;
-            padding: 20px;
-            margin-right: 5px;
-        }
-
-        #nav_but, #nav_search,
-        #nav_search_Box, #nav_profile{
-            display: flex; 
-        }
-        #nav_but_icon, #nav_but_Logo {
-            margin-right: 5px; 
-        }
-        #nav_but_icon img{
-            width: 20px; 
-            height: 30px;
-        }
-        #nav_but_Logo img{
-            width: 80px; 
-            height: 30px;
-        }
-        #nav_search_box_icon img{
-            width: 30px; 
-            height: 30px;
-        }
-        #nav_search_icon img{
-            width: 30px; 
-            height: 30px;
-            margin-right: 5px;
-        }
-
-        #nav_profile img{
-            width: 30px;
-            height: 30px;
-        }
-        #nav_search_Place {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 10px; /* 검색바를 직사각형 모양으로 설정 */
-            padding: 5px 10px;
-            width: 400px;
-            height: 20px;
-        }
-
-        /* 검색 아이콘 스타일링 */
-        #search_icon {
-            width: 10px; /* 검색 아이콘의 너비를 조절하여 크기를 변경 */
-            height: 10px; /* 검색 아이콘의 높이를 조절하여 크기를 변경 */
-            margin-right: 5px;
-        }
-
-        /* 검색 입력란 스타일링 */
-        #search_input {
-            flex: 1;
-            border: none;
-            outline: none;
-            padding: 5px;
-            border-radius: 10px; /* 검색 입력란을 직사각형 모양으로 설정 */
-        }
-    </style>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="common_1.css">
-    <link rel="stylesheet" href="common_2.css">
+    <link rel="stylesheet" href="channel.css">
 </head>
+
 <body>
-    <div id="Red" class="div-flex-column">
-        <!-- div id = "Orange"는 상단 바 입니다. -->
-        <div id="Orange" class="div-flex-row" style="background-color: #413e3e;"> 
+    <div id="Youtube_Page" class="div-flex-column"> <!-- Red -> Youtube_Channel_Page-->
+
+        <div id="Nav" class="div-flex-row"> <!-- Yellow_1 -> Nav -->
             <div id="nav_but">
                 <div id="nav_but_icon">
-                    <a href="#"><img src="img//hamburger.jpg" alt="Hamburger Icon"></a>
+                    <a href="#"><img src="image\Nav\hamburger.svg" alt="Hamburger Icon"></a>
                 </div>
                 <div id="nav_but_Logo">
-                    <a href="https://www.youtube.com/"><img src="img//YouTube_Logo.jpg" alt="YouTube Logo"></a>
+                    <a href="https://www.youtube.com/"><img src="image\Nav\Youtube-Logo.svg" alt="YouTube Logo"></a>
                 </div>
             </div>
             <div id="nav_searchBox">
@@ -104,164 +32,225 @@
                     </div>
                     <div id="nav_search_Box_But">
                         <div id="nav_search_Box_But_icon">
-                            <a href="#"><img src="icon//Navigations_icon//Navigations-search//Navigations-search-searchbutton.svg" alt="search Icon"></a>
+                            <a href="#"><img src="image\Nav\search.svg" alt="search Icon"></a>
                         </div>
                     </div>
                 </div>
                 <div id="nav_search_mic_icon">
-                    <img src="img//mic.jpg" alt="mic Icon">
+                    <img src="image\Nav\mic.svg" alt="mic Icon">
                 </div>
             </div>
             <div id="nav_profile">
                 <div id="nav_create">
-                    <img src="img//create.jpg" alt="create Icon">
+                    <img src="image\Nav\create.svg" alt="create Icon">
                 </div>
                 <div id="nav_apps">
-                    <img src="img//app.jpg" alt="app Icon">
+                    <img src="image\Nav\apps.svg" alt="app Icon">
                 </div>
                 <div id="nav_notifications">
-                    <img src="img//notifications.jpg" alt="notifications Icon">
+                    <img src="image\Nav\notifications.svg" alt="notifications Icon">
                 </div>
                 <div id="nav_pic">
-                    <a href="#"><img src="img//pic.jpg" alt="pic Icon"></a>
+                    <a href="#"><img src="image\Avatar\MainProfile.svg" alt="pic Icon"></a>
                 </div>
             </div>
         </div>
-        <div id="Yellow" class="div-flex-row">
-            <!-- div id="Green"은 사이드 바 입니다. 구조만 만들어 둔 상태 입니다.(추가 작업 필요) -->
-            <div id="Green" class="div-flex-column">
+
+        <div id="View_Page" class="div-flex-row"> <!-- Yellow_2 -> View_Page -->
+
+            <div id="Sidebar" class="div-flex-column"> <!-- Green_1 -> Sidebar-->
                 <div id="Sid_Top">
-                    <div id="1" >
-                        <div id="Home_icon"><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-1.home-fill.svg" alt="Sidebar-Top-1.home-fill Icon"></div>
-                        <div id="Home_name">HOME</div>
+                    <div class="div-flex-row">
+                        <div id="Home_icon"><img src="image/Sidebar/home.svg" alt="Sidebar-Top-1.home-fill Icon"></div>
+                        <div id="Home_name">Home</div>
                     </div>
-                    <div id="2">
-                        <div id="Explore_icon"><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-2.explore.svg" alt="Sidebar-Top-2.explore Icon"></div>
+                    <div class="div-flex-row">
+                        <div id="Explore_icon"><img src="image\Sidebar\explore.svg" alt="Sidebar-Top-2.explore Icon">
+                        </div>
                         <div id="Explore_name">Explore</div>
                     </div>
-                    <div id="3">
-                        <div id="Subscriptions_name"><img src="icon//Sidebar_icon//Sidebar-Top//Sidebar-Top-3.subscriptions.svg"alt="Sidebar-Top-3.subscriptions Icon">
-                        <div id="Subscriptions_name">Subscriptions</div>                        
-                    </div>
-                </div>
-                <hr>
-                <div id="Sid_Top-2">
-                    <div>
-                        <div id="1">
-                            <div id="library_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-1.library.svg"alt="Sidebar-Top2-1.library Icon"></div>
-                            <div id="library_Icon_name">Library</div>
-                        </div>
-                        <div id="2">
-                            <div id="history_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-2.history.svg"alt="history Icon"></div>
-                            <div id="history_Icon_name">History</div>
-                        </div>
-                        <div id="3">
-                            <div id="yourVideos_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-3.yourVideos.svg"alt="yourVideos Icon"></div>
-                            <div id="yourVideos_Icon_name">YourVideos</div>
-                        </div>
-                        <div id="4">
-                            <div id="watchLater_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-4.watchLater.svg"alt="watchLater Icon"></div>
-                            <div id="watchLater_Icon_name">WatchLater</div>
-                        </div>
-                        <div id="5">
-                            <div id="liked_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-5.liked.svg"alt="liked Icon"></div>
-                            <div id="liked_Icon_name">Liked</div>
-                        </div>
-                        <div id="6">
-                            <div id="arrowBottom_Icon_icon"><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-6.arrowBottom(Show More).svg"alt="arrowBottom Icon"></div>
-                            <div id="arrowBottom_Icon_name">ArrowBottom</div>
+                    <div class="div-flex-row">
+                        <div id="Subscriptions_name"><img src="image\Sidebar\subscriptions.svg"
+                                alt="Sidebar-Top-3.subscriptions Icon">
+                            <div id="Subscriptions_name">Subscriptions</div>
                         </div>
                     </div>
-                </div>
-                <hr>
-                <div id="Sid_Subscrip">
-                    <div><h1>SUBSCRIPTIONS</h1></div>
-                    <!-- 
-                        <div id="1">
-                            <div id="JamesGouse_icon"><img src="icon\UserAvatar\UserAvatar-JamesGouse.jpg"alt="James Gouse"></div>
+                    <hr>
+                    <div id="Sid_Top-2">
+                        <div>
+                            <div class="div-flex-row">
+                                <div id="library_Icon_icon"><img src="image\Sidebar\library.svg"
+                                        alt="Sidebar-Top2-1.library Icon"></div>
+                                <div id="library_Icon_name">Library</div>
+                            </div>
+                            <div class="div-flex-row">
+                                <div id="history_Icon_icon"><img src="image\Sidebar\history.svg" alt="history Icon">
+                                </div>
+                                <div id="history_Icon_name">History</div>
+                            </div>
+                            <div class="div-flex-row">
+                                <div id="yourVideos_Icon_icon"><img src="image\Sidebar\yourVideos.svg"
+                                        alt="yourVideos Icon"></div>
+                                <div id="yourVideos_Icon_name">Your Videos</div>
+                            </div>
+                            <div class="div-flex-row">
+                                <div id="watchLater_Icon_icon"><img src="image\Sidebar\watchLater.svg"
+                                        alt="watchLater Icon"></div>
+                                <div id="watchLater_Icon_name">Watch Later</div>
+                            </div>
+                            <div class="div-flex-row">
+                                <div id="liked_Icon_icon"><img src="image\Sidebar\live.svg" alt="liked Icon"></div>
+                                <div id="liked_Icon_name">Liked Videos</div>
+                            </div>
+                            <div class="div-flex-row">
+                                <div id="arrowBottom_Icon_icon"><img src="image\Sidebar\showMoreArrow.svg"
+                                        alt="arrowBottom Icon"></div>
+                                <div id="arrowBottom_Icon_name">Show More</div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="Sid_Subscrip">
+                        <div>
+                            <h1>SUBSCRIPTIONS</h1>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="JamesGouse_icon"><img src="image\Avatar\JamesGouse.svg" alt="James Gouse"></div>
                             <div id="JamesGouse_name">James Gouse</div>
-                        </div> 
-                        <div id="2">
-                            <div id="AlanCooper_icon"><img src="icon\UserAvatar\UserAvatar-AlanCooper.jpg" alt="Alan Cooper"></div>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="AlanCooper_icon"><img src="image\Avatar\AlanCooper.svg" alt="Alan Cooper"></div>
                             <div id="AlanCooper_name">Alan Cooper</div>
-                        </div> 
-                        <div id="3">
-                            <div id="MarcusLevin_icon"><img src="icon\UserAvatar\UserAvatar-MarcusLevin.jpg"alt="Marcus Levin"></div>
-                            <div id="MarcusLevin_name">James Gouse</div>
-                        </div> 
-                        <div id="4">
-                            <div id="AlexisSears_icon"><img src="icon\UserAvatar\UserAvatar-AlexisSears.jpg"alt="-Alexis Sears"></div>
-                            <div id="AlexisSears_name">James Gouse</div>
-                        </div> 
-                        <div id="5">
-                            <div id="JesicaLambert_icon"><img src="icon\UserAvatar\UserAvatar-JesicaLambert.jpg" alt="Jesica Lambert"></div>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="MarcusLevin_icon"><img src="image\Avatar\MarcusLevin.svg" alt="Marcus Levin"></div>
+                            <div id="MarcusLevin_name">Marcus Levin</div>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="AlexisSears_icon"><img src="image\Avatar\AlexisSears.svg" alt="-Alexis Sears">
+                            </div>
+                            <div id="AlexisSears_name">Alexis Sears</div>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="JesicaLambert_icon"><img src="image\Avatar\JesicaLambert.svg" alt="Jesica Lambert">
+                            </div>
                             <div id="JesicaLambert_name">Jesica Lambert</div>
-                        </div> 
-                        <div id="6">
-                            <div id="AnnaWhite_icon"><img src="icon\UserAvatar\UserAvatar-AnnaWhite.jpg" alt="Anna White"></div>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="AnnaWhite_icon"><img src="image\Avatar\AnnaWhite.svg" alt="Anna White"></div>
                             <div id="AnnaWhite_name">Anna White</div>
-                        </div> 
-                        <div id="7">
-                            <div id="SkylarDias_icon"><img src="icon\UserAvatar\UserAvatar-SkylarDias.jpg"alt="Skylar Dias"></div>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="SkylarDias_icon"><img src="image\Avatar\SkylarDias.svg" alt="Skylar Dias"></div>
                             <div id="SkylarDias_name">Skylar Dias</div>
-                        </div> 
-                    해당 부분 사진 크기가 너무커서 주석처리했습니다
-                    -->
-                    <div><img src="icon//Sidebar_icon//Sidebar-Top2//Sidebar-Top2-6.arrowBottom(Show More).svg"alt="arrowBottom Icon">ArrowBottom</div>
-                </div>
-                <hr>
-                <div id="Sid_More-From">
-                    <div><h1>More FROM YOUTUBE</h1></div>
-                    <div id="1">
-                        <div id="Youtube_Premium_icon"><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-1.premium.svg"alt="1.premium"></div>
-                        <div id="Youtube_Premium_name">Youtube Premium</div>
+                        </div>
+                        <div class="div-flex-row"><img src="image\Sidebar\showMoreArrow.svg" alt="arrowBottom Icon">Show
+                            13 more</div>
                     </div>
-                    <div id="2">
-                        <div id="Gaming_icon"><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-2.Gaming.svg"alt="2.Gaming"></div>
-                        <div id="Gaming_name">Gaming</div>
+                    <hr>
+                    <div id="Sid_More-From">
+                        <div>
+                            <h1>MORE FROM YOUTUBE</h1>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="Youtube_Premium_icon"><img src="image\Sidebar\youtubePremium.svg" alt="1.premium">
+                            </div>
+                            <div id="Youtube_Premium_name">Youtube Premium</div>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="Gaming_icon"><img src="image\Sidebar\gaming.svg" alt="2.Gaming"></div>
+                            <div id="Gaming_name">Gaming</div>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="Live_icon"><img src="image\Sidebar\live.svg" alt="3.Live"></div>
+                            <div id="Live_name">Live</div>
+                        </div>
+                        <div class="div-flex-row">
+                            <div id="Sports_icon"><img src="image\Sidebar\sports.svg" alt="4.Sports"></div>
+                            <div id="Sports_name">Sports</div>
+                        </div>
                     </div>
-                    <div id="3">
-                        <div id="Live_icon"><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-3.live.svg"alt="3.Live"></div>
-                        <div id="Live_name">Live</div>
+                    <div id="nav_Btu">
+                        <div></div>
                     </div>
-                    <div id="4">
-                        <div id="Sports_icon"><img src="icon//Sidebar_icon//Sidebar-More-From//Sidebar-More-From-4.sports.svg"alt="4.Sports"></div>
-                        <div id="Sports_name">Sports</div>
+                    <div id="nav_Footer">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
                     </div>
-                </div>
-                <div id="nav_Btu">
-                    <div></div>
-                </div>
-                <div id="nav_Footer">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                
                 </div>
             </div>
-            <div id="Skyblue" class="div-flex-column">
-                <div id="Blue" class="div-flex-row">
-                    <div class="filters">
-                        <button active ><img src="icon\Top-Menu_icon\Top-Menu-Item(All).png"alt="Top-Menu-Item(All)"></button>
-                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
-                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
-                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
-                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
-                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
-                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>
-                        <button ><img src="icon\Top-Menu_icon\Top-Menu-Item.png"></button>  
+
+            <div id="Main_Page" class="div-flex-column"> <!--  Green_2 -> Main_Page -->
+                <div id="Channel_Cover" class="div-flex-row"> <!-- Skyblue_1 -> Channel_Cover -->
+                    <img src="image\Channel\Cover.svg" alt="ChannelCover">
                 </div>
                 <div id="Purple" class="div-flex-column">
-                    <div id="1">
-                        <div id="ChannelCover_icon"><img src="icon\Channel_Page\ChannelCover-image 2.png"alt="ChannelCover"></div>
-                        <div id="ChannelCover_name">ChannelCover</div>
+                    <div id="Channel" class="div-flex-column">
+
+                        <div id="Channeltitle" class=" div-flex-row">
+                            <div id="Channelprofile" class="div-flex-row">
+                                <img src="image\Avatar\MarcusLevin.svg" class="Channelprofile_icon"
+                                    alt="Channelprofile_icon">
+                                <div class="info">
+                                    <h4 class="Channelprofile_name">Marcus Levin</h4>
+                                    <p class="Channelprofiile_subscribers">1.2M subscribers</p>
+                                </div>
+                            </div>
+                            <div class="Subscribers">
+                                <button class="Subscribers-options">SUBSCRIBES</button>
+                            </div>
+                        </div>
+                        <div id="Channeltoolbar">
+                            <div class="Channeltoolbar">
+                                <button class="Channeltoolbar-option">HOME</button>
+                                <button class="CHanneltoolbar-option">VIDEOS</button>
+                                <button class="CHanneltoolbar-option">PLAYLISTS</button>
+                                <button class="CHanneltoolbar-option">COMMUNITY</button>
+                                <button class="CHanneltoolbar-option">CHANNEL</button>
+                                <button class="CHanneltoolbar-option">ABOUT</button>
+                                <button class="CHanneltoolbar-option"><img src="image\Nav\search.svg"></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="Pink" class="div-flex-column">
+                <div id="Smallplayer" class="div-flex-row">
+                    <div class="Smallplyer">
+                        <video width="480" height="320" controls
+                            poster="https://storage.googleapis.com/oreumi.appspot.com/img_11.jpg">
+                            <source src="https://storage.googleapis.com/oreumi.appspot.com/video_11.mp4">
+                        </video>
+                    </div>
+                    <div class="Smallplayer-info">
+                        <h5 class="Smallplayer-info-title">토끼의 생태와 서식지 탐방</h5>
+                        <p class="Smallplayer-info-view">976,280 views. 2023.03.08.</p>
+                        <P class="Smallplayer-info-text">자연에서 만난 토끼들의 이야기는 사나운 맹수들을 피하는 것으로부터 시작된다.<br>
+                            토끼들은 사나운 맹수를 피하기 위해 다양한 형태로 살아남는 방법을 터득하게 되는데.....</P>
+                    </div>
                 </div>
+                <div id="Playlist" class="Playlist">
+                    <div>
+                        <div id="Playlist-title">
+                            <h4>Search On '21</h4>
+                        </div>
+                        <div id="Playlist-icon"><img src="image\Player\play.svg">
+                            <p>PLAY ALL</p>
+                        </div>
+                    </div>
+                    <div id="Video_Container_Line" class="div-flex-row">
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 </body>
+<script src="channel.js"></script>
+<script>
+    window.onload = () => {
+        loadVideoList();
+    }
+</script>
 </html>
