@@ -23,7 +23,7 @@
 
 /* 이 아래부터는 channel.html 작업 끝나면 세부적으로 조정해주세요 */
 
-.Channel-Toolbar {    /* .channel-content의 하위 1번 */
+.Channel_Toolbar {    /* .channel-content의 하위 1번 */
     width: 100%;
     height: 5%;
     display: flex;
@@ -90,7 +90,7 @@
     justify-content: center;
     align-items: center;
 }
-.Channel-Title {    /* .channel-container의 하위 2번 */
+.Channel_Title {    /* .channel-container의 하위 2번 */
     width: 100%;
     height: 10%;
     display: flex;
@@ -161,7 +161,7 @@
 }
 
 
-.play-list-one {    /* .channel-content의 하위 3번 */
+.play_list_one {    /* .channel-content의 하위 3번 */
     width: 100%;
     height: 30%;
     display: flex;
@@ -170,7 +170,7 @@
     padding: 0px 65px 0px 65px;
 }
 
-.play-list-two {    /* .channel-content의 하위 4번 */
+.play_list_two {    /* .channel-content의 하위 4번 */
     width: 100%;
     height: 30%;
     display: flex;
