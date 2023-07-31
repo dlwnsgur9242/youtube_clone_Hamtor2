@@ -5,6 +5,23 @@
 // 채널 주인을 "oreumi"라고 생각했을 때 본인 소유의 video_id = 0부터 9까지만 뜨도록 for문의 범위를 줬습니다.
 
 
+function loadVideoList() {
+
+    // 서버와 통신하기 위한 XMLHttpRequest 객체 생성
+    let xhr = new XMLHttpRequest();
+    let data;
+
+    xhr.open("GET", "http://oreumi.appspot.com/video/getVideoList");
+    xhr.send();
+
+    xhr.onload = async () => {
+        // 받아 온 JSON 형식의 응답데이터를 비동기적으로 파싱하여 data 변수에 할당
+        data = await (JSON.parse(xhr.responseText));
+        // 받아 온 비디오리스트를 가공하여 홈 화면에 보여줌
+        makeChannelDiv(data);
+    }
+}
+
 // 비디오의 세부정보 API 불러오기
 function loadVideoDetail(data) {
     return new Promise((resolve, reject) => {
@@ -29,7 +46,7 @@ function loadVideoDetail(data) {
 // Search On '21 아래 부분 div 만들기
 function makeChannelDiv(datas) {
 
-    const videoList = document.getElementById('Video_Container')  // id는 임시로 Video_Container로 입력, channel.html과 맞춰야 합니다.
+    const videoList = document.getElementById('Video_Container_Line')  // id는 임시로 Video_Container로 입력, channel.html과 맞춰야 합니다.
 
     for (let i = 0; i < 10; i++) { // video_id = 0부터 9까지
         let data = datas[i];

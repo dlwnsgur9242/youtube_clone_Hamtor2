@@ -47,7 +47,7 @@ function randomAvatarPic(video_id){
 
 function makeHomeDiv(datas) {
 
-    const videoList = document.getElementById('Purple')
+    const videoList = document.getElementById('Video_Container')
 
     for (let data of datas) {
         let dataDetail = loadVideoDetail(data)
