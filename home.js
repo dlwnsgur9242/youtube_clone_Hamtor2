@@ -47,7 +47,7 @@ function randomAvatarPic(video_id){
 
 function makeHomeDiv(datas) {
 
-    const videoList = document.getElementById('Purple')
+    let videoList = document.getElementById('Video_Container')
 
     for (let data of datas) {
         let dataDetail = loadVideoDetail(data)
@@ -55,28 +55,28 @@ function makeHomeDiv(datas) {
 
                 let avatarName = randomAvatarPic(dataDetail.video_id);
 
-                const thumbnailItem = document.createElement("div");
+                let thumbnailItem = document.createElement("div");
                 thumbnailItem.classList.add("thumbnail_item");
 
-                const thumbnailImages = document.createElement("img");
+                let thumbnailImages = document.createElement("img");
                 thumbnailImages.classList.add("thumbnail_images");
                 thumbnailImages.src = dataDetail.image_link;
 
-                const thumbnail = document.createElement("div");
+                let thumbnail = document.createElement("div");
                 thumbnail.classList.add("thumbnail");
 
-                const thumbnailProfilePic = document.createElement("img");
+                let thumbnailProfilePic = document.createElement("img");
                 thumbnailProfilePic.classList.add("thumbnail_profile_pic");
                 thumbnailProfilePic.src = `./image/Avatar/${avatarName}`
 
-                const thumbnailDesc = document.createElement("div");
+                let thumbnailDesc = document.createElement("div");
                 thumbnailDesc.classList.add("thumbnail_desc");
 
-                const thumbnailDescTitle = document.createElement("div");
+                let thumbnailDescTitle = document.createElement("div");
                 thumbnailDescTitle.classList.add("thumbnail_desc_title");
                 thumbnailDescTitle.textContent = dataDetail.video_title;
 
-                const thumbnailDescInfo = document.createElement("div");
+                let thumbnailDescInfo = document.createElement("div");
                 thumbnailDescInfo.classList.add("thumbnail_desc_info");
                 thumbnailDescInfo.textContent = dataDetail.video_channel;
                 thumbnailDescInfo.textContent = dataDetail.views;
