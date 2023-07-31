@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common_1.css">
+    <link rel="stylesheet" href="video.css">
+</head>
+
+<body>
+    <div id="Youtube_Page" class="div-flex-column"> <!-- Red -> Youtube_Video_Page-->
+
+        <div id="Nav" class="div-flex-row"> <!-- Yellow_1 -> Nav -->
+            <div id="nav_but">
+                <div id="nav_but_icon">
+                    <a href="#"><img src="./" alt="Hamburger Icon"></a>
+                </div>
+                <div id="nav_but_Logo">
+                    <a href="https://www.youtube.com/"><img src="image\Nav\Youtube-Logo.svg" alt="YouTube Logo"></a>
+                </div>
+            </div>
+            <div id="nav_searchBox">
+                <div id="nav_search_Box_Area">
+                    <div id="nav_search_Box">
+                        <div id="nav_search_Place">
+                            <input type="text" id="search_input" placeholder="Search">
+                        </div>
+                    </div>
+                    <div id="nav_search_Box_But">
+                        <div id="nav_search_Box_But_icon">
+                            <a href="#"><img src="image\Nav\search.svg" alt="search Icon"></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="nav_search_mic_icon">
+                    <img src="image\Nav\mic.svg" alt="mic Icon">
+                </div>
+            </div>
+            <div id="nav_profile">
+                <div id="nav_create">
+                    <img src="image\Nav\create.svg" alt="create Icon">
+                </div>
+                <div id="nav_apps">
+                    <img src="image\Nav\apps.svg" alt="app Icon">
+                </div>
+                <div id="nav_notifications">
+                    <img src="image\Nav\notifications.svg" alt="notifications Icon">
+                </div>
+                <div id="nav_pic">
+                    <a href="#"><img src="image\Avatar\MainProfile.svg" alt="pic Icon"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="View_Page div-flex-row"> <!-- Yellow_2 -> View_Page -->
+            <div class="Primary div-flex-column"> <!-- Green_1 -> View_Page의 왼쪽 half -->
+                <div class="Video_player div-flex-column">  <!-- Primary의 하위 1번. Skyblue_1 -->
+                    <div class="Youtube_Player">  <!-- Video_player의 Blue_1. 비디오 재생화면 -->
+                        <video width="480" height="320" controls
+                            poster="https://storage.googleapis.com/oreumi.appspot.com/img_11.jpg">
+                            <source src="https://storage.googleapis.com/oreumi.appspot.com/video_11.mp4">
+                        </video>
+                    </div>
+                    <div class="Video_Info div-flex-row">  <!-- Video_player의 Blue_2. 비디오 제목/정보 -->
+                        <div class="Video_Info_Title">Blind Woodturner: Turning passion into fine art</div>
+                        <div class="div-flex-row">
+                            <div class="Video_Info_View">576,969 views. Oct 8, 2021</div>
+                            <div class="Video_Info_Buttons div-flex-row">
+                                <div><img src="image\Video\liked.svg"></div>
+                                <div>1.7K</div>
+                                <div><img src="image\Video\disliked.svg"></div>
+                                <div>632</div>
+                                <div><img src="image\Video\share.svg"></div>
+                                <div>SHARE</div>
+                                <div><img src="image\Video\save.svg"></div>
+                                <div>SAVE</div>
+                                <div><img src="image\Video\moreThreeDots.svg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Video_Desc div-flex-column">  <!-- Primary의 하위 2번. Skyblue_2 -->
+                    <div class="Video_Desc_in_Video-Desc div-flex-row">  <!-- Video_Desc의 Blue_1. 유투버 기본정보 -->
+                        <div id="Channelprofile" class="div-flex-row">
+                            <img src="image\Avatar\MarcusLevin.svg" class="Channelprofile_icon"
+                                alt="Channelprofile_icon">
+                            <div class="info">
+                                <h4 class="Channelprofile_name">Marcus Levin</h4>
+                                <p class="Channelprofiile_subscribers">1.2M subscribers</p>
+                            </div>
+                            <div class="Subscribers">
+                                <button class="Subscribers-options">SUBSCRIBES</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Video_Desc_in_Video-Desc_in_Video-Desc div-flex-row">  <!-- Video_Desc의 Blue_2. 유투버 상세정보 -->
+                        <div>
+                            <p>Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he's a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.</p>
+                            <a href="#" class="show_more">SHOW MORE</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Comment div-flex-column">  <!-- Primary의 하위 3번. Skyblue_3 -->
+                    <div class="Sort_By div-flex-row">  <!-- Comment의 Blue_1 -->
+                        <div class="Count">286 Comments</div>
+                        <div class="Sort_By_in_Sort_By">
+                            <div class="Icon"><img src="image\Video\sortBy.svg"></div>
+                            <div>SORT BY</div>
+                        </div>
+                    </div>
+                    <div class="Comment_in_Comment">
+                        <div class="Profile_Pic">
+                            <img src="image\Avatar\MainProfile.svg" class="Channelprofile_icon" alt="Channelprofile_icon">
+                        </div>
+                        <div class="Comment-Area">
+                            <input type="text" id="comment_input" placeholder="Add a public comment...">
+                        </div>
+                    </div>
+                </div>   
+                <div class="Comments">
+                    <div class="Comment_in_Comments">
+                        <div class="Profile-Pic"></div>
+                        <div class="Comment_in_Comment_in_Comments">
+                            <div class="Comment_Header"></div>
+                            <div class="Comment_Text"></div>
+                            <div class="Comment_Toolbar"></div>
+                        </div>
+                    </div>
+                    <div class="Comment_in_Comment_in_Comments"></div>
+
+                </div>
+            </div>
+            <div class="Secondary div-flex-column"> <!-- Green_2 -> View_Page의 오른쪽 half -->
+                <div class="Top_Menu">
+                    <div class="Top_Menu_Item"></div>
+                    <div class="Top_Menu_Button"></div>
+                </div>
+                <div class="Videos">
+                    <div class="Video">
+                        <div class="Thumbnail"></div>
+                        <div class="Video-Text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="video.js"></script>
+<script>
+    window.onload = () => {
+        console.log('hi')
+        loadVideoList();
+    }
+</script>
+</html>
