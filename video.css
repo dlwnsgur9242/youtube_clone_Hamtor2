@@ -19,9 +19,15 @@
 }
 
 .Primary {   /* video-container의 하위 1번 */
-    width: 60%;
-    height: 100%;
-    padding: 24px 0px 24px 24px;
+    display: flex;
+    width: 664px;
+    height: 968px;
+    padding: 24px 0px 0px 24px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background: #181818;
 }
 .Video_player {   /* primary의 하위 1번 */
     width: 100%;
@@ -41,6 +47,67 @@
     justify-content: center;
     align-items: flex-start;
 }
+.Video_Info_Video_Info{ /*(VideoPlayer) primary의 하위 1번 Video-player 하위 Video_Info의 Info*/
+    display: flex;
+    padding: 20px 0px 8px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.Video_Info_Info{ /*(VideoPlayer) primary의 하위 1번 Video-player 하위 Video_Info의 Info*/
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 91px;
+}
+.Video_Info_Title{ /* primary의 하위 1번 Video-player 하위 Video-Info 하위 제목 텍스트 */
+    color: var(--white-color, #FFF);
+    font-variant-numeric: stacked-fractions;
+    font-feature-settings: 'hlig' on, 'dlig' on;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.18px;
+}
+.Video_Info_text{
+    display: flex;
+    padding: 12px 0px;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;    
+}
+.Top_Level_Button{  /*VideoPlayer부분 Top_Level_Button */
+    display: flex;
+    padding: 7x;
+    align-items: flex-start;
+    background: #181818;
+}
+.Top_Level_Button img{
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 4px 2.997px 3px 3px;
+    justify-content: center;
+    align-items: center;
+}
+.Video_Info_Buttons_text{
+    display: flex;
+    padding: 10px 6px 10px 0px;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--white-color, #FFF);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
 .Video_Desc{/* primary의 하위 2번 */
     display: flex;
     width: 640px;
@@ -219,5 +286,5 @@
     width: 226px;
     padding: 7px 0px;
     flex-direction: column;
-    align-items: flex-start;   
+    align-items: flex-start;  
 }
