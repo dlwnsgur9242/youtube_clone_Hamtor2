@@ -65,6 +65,13 @@ html, body {
     left: 0;
     background-color: #212121;
   }
+
+/*nav_but_icon hamburger 버튼 */
+#nav_but_icon {
+    display: inline-flex;
+    align-items: center;
+}
+
 /*youtube 로고 버튼*/
 #nav_but{
     display: inline-flex;
@@ -99,6 +106,7 @@ html, body {
     border-radius: 2px 0px 0px 2px;
     background: #121212;
 }
+
 /*상단 Profile 메인블럭*/
 #nav_Profile{
     display: flex;
@@ -224,7 +232,7 @@ html, body {
 }
 /*상단 검색창 -> 아래 검색 입력란과 중복 적용되어 주석처리*/
 #nav_search_Place {
-    /* width: 85%;
+    width: 85%;
     height: 100%;
     border: 2px solid #dbdbdb;
     padding: 0 20px;
@@ -234,26 +242,22 @@ html, body {
 
 /* 검색 입력란 스타일링 */
 #search_input {
-    width: 360px;
-    height: 32px;
-    border: 1px solid #303030;
-    background-color: #121212;
-    font-size: 16px;
-    padding: 3px 8px;
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 10px; /* 검색 입력란을 직사각형 모양으로 설정 */
 }
 
 /* 상단 search 아이콘 박스*/
-#nav_search_Box_But_icon{
-    border: 1px solid #303030;
-    background-color: #303030;
-    border-left: none;
-    height: 32px;
-    width: 45px;
-    padding: 3px 8px;
-    margin-left: 16px;
+#nav_search_Box_But{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 15%;
+    height: 100%;
+    background: #f0f0f0;
+    border: 2px solid #dbdbdb;
+    padding: 5px 0;
+    border-left: none;
 }
 
 /*search 아이콘*/
@@ -443,17 +447,11 @@ h1 {
 }
 /* .Frame12 */
 #Video_Container {
-    width: 100%;
-    overflow: hidden;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
-    background-color: #000;
-    color: white;
-} 
-#Video_Container > div{
-    margin: 10px;
+    flex-shrink: 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);   
 }
 
 /* Thumbnail */
@@ -502,6 +500,7 @@ h1 {
     align-items: center;
     flex-shrink: 0;    
 }
+
 /* VideoTime */
 .VideoTime{
     display: inline-flex;
