@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>햄토리 VIDEO</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="common_1.css">
     <link rel="stylesheet" href="video.css">
 </head>
 
 <body>
-    <div id="Youtube_Page" class="div-flex-column"> <!-- Red -> Youtube_Video_Page-->
+    <div id="video_Page" class="div-flex-column"> <!-- Red -> Youtube_Video_Page-->
 
         <div id="Nav" class="div-flex-row"> <!-- Yellow_1 -> Nav -->
             <div id="nav_but">
                 <div id="nav_but_icon">
-                    <a href="#"><img src="./" alt="Hamburger Icon"></a>
+                    <a href="#"><img src="image\Nav\hamburger.svg" alt="Hamburger Icon"></a>
                 </div>
                 <div id="nav_but_Logo">
                     <a href="https://www.youtube.com/"><img src="image\Nav\Youtube-Logo.svg" alt="YouTube Logo"></a>
@@ -57,32 +57,62 @@
         </div>
 
         <div class="View_Page div-flex-row"> <!-- Yellow_2 -> View_Page -->
+            
             <div class="Primary div-flex-column"> <!-- Green_1 -> View_Page의 왼쪽 half -->
+               
                 <div class="Video_player div-flex-column">  <!-- Primary의 하위 1번. Skyblue_1 -->
+                    
                     <div class="Youtube_Player">  <!-- Video_player의 Blue_1. 비디오 재생화면 -->
+                        
                         <video width="480" height="320" controls
+
                             poster="https://storage.googleapis.com/oreumi.appspot.com/img_11.jpg">
                             <source src="https://storage.googleapis.com/oreumi.appspot.com/video_11.mp4">
+                        
                         </video>
+
                     </div>
-                    <div class="Video_Info div-flex-row">  <!-- Video_player의 Blue_2. 비디오 제목/정보 -->
-                        <div class="Video_Info_Title">Blind Woodturner: Turning passion into fine art</div>
-                        <div class="div-flex-row">
-                            <div class="Video_Info_View">576,969 views. Oct 8, 2021</div>
-                            <div class="Video_Info_Buttons div-flex-row">
-                                <div><img src="image\Video\liked.svg"></div>
-                                <div>1.7K</div>
-                                <div><img src="image\Video\disliked.svg"></div>
-                                <div>632</div>
-                                <div><img src="image\Video\share.svg"></div>
-                                <div>SHARE</div>
-                                <div><img src="image\Video\save.svg"></div>
-                                <div>SAVE</div>
-                                <div><img src="image\Video\moreThreeDots.svg"></div>
+
+                    <div class="Video_Info div-flex-row"> 
+                         <!-- Video_player의 Blue_2. 비디오 제목/정보 -->
+                        <div class="Video_Info_Video_Info">
+                            <div class="Video_Info_Title">Blind Woodturner: Turning passion into fine art</div>
+                        
+                            <div class="Video_Info_Info div-flex-row">
+
+                                <div class="Video_Info_text">576,969 views . Oct 8, 2021</div>   <!-- Video_Info_text -->
+                                
+                                <div class="Video_Info_Buttons div-flex-row"> 
+
+                                    <a class="Top_Level_Button"><img src="image//Video//liked.svg">
+                                        <div class="Video_Info_Buttons_text">1.7K</div>
+                                    </a>
+
+                                    <a class="Top_Level_Button"><img src="image//Video//disliked.svg">
+                                        <div class="Video_Info_Buttons_text">632</div>
+                                    </a>
+                                    
+                                    <a class="Top_Level_Button"><img src="image//Video//share.svg">
+                                        <div class="Video_Info_Buttons_text">SHARE</div>
+                                    </a>
+
+                                    <a class="Top_Level_Button"><img src="image//Video//save.svg">
+                                        <div class="Video_Info_Buttons_text">SAVE</div>
+                                    </a>
+
+                                    <a class="Top_Level_Button"><img src="image//Video//moreThreeDots.svg">
+                                    </a>
+
+                                </div>
+
                             </div>
+                        
                         </div>
+                        <br>
                     </div>
+
                 </div>
+
                 <div class="Video_Desc div-flex-column">  <!-- Primary의 하위 2번. Skyblue_2 -->
                     <div class="Video_Desc_in_Video-Desc div-flex-row">  <!-- Video_Desc의 Blue_1. 유투버 기본정보 -->
                         <div id="Channelprofile" class="div-flex-row">
@@ -147,7 +177,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </body>
 <script src="video.js"></script>
