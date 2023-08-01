@@ -21,6 +21,7 @@ function loadVideoList() {
     }
 }
 
+
 // 비디오의 세부정보 API 불러오기
 function loadVideoDetail(data) {
     return new Promise((resolve, reject) => {
@@ -40,7 +41,20 @@ function loadVideoDetail(data) {
         };
     });
 }
+// 수정해보았지만 구동되지 않아 주석으로 남겨놓습니다
+// 5개 단위로 나타나게 하려했는데 문제가 좀 있습니다
+// async function makeChannelDiv(datas) {
+//     const videoList = document.getElementById('Video_Container_Line')
 
+//     // 5개씩 잘라서 표시
+//     for (let i = 0; i < datas.length; i += 5) {
+//         const chunk = datas.slice(i, i + 5);
+//         const chunkDiv = document.createElement("div");
+//         chunkDiv.classList.add("chunk_div"); // 5개를 묶어주는 div만듬 그 div에 "chunk_div"라는 클래스를 추가
+
+//         for (let data of chunk) {
+//             try {
+//                 const dataDetail = await loadVideoDetail(data);
 
 // Search On '21 아래 부분 div 만들기
 function makeChannelDiv(datas) {
