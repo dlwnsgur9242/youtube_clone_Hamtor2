@@ -25,6 +25,15 @@ function loadVideoDetail(data) {
     });
 }
 
+// function makeChannelDiv(datas) {
+//     const mainVideo = document.getElementById('Smallplayer');
+//     for (let data of datas) {
+//         let dataDetail = loadVideoDetail(data)
+//             .then((dataDetail) => {
+                
+//             })
+//     }
+// }
 
 // Search On '21 아래 부분 div 만들기
 function makeChannelDiv(datas) {
