@@ -46,6 +46,7 @@ function loadVideoDetail(data) {
 // async function makeChannelDiv(datas) {
 //     const videoList = document.getElementById('Video_Container_Line')
 
+<<<<<<< HEAD
 //     // 5개씩 잘라서 표시
 //     for (let i = 0; i < datas.length; i += 5) {
 //         const chunk = datas.slice(i, i + 5);
@@ -55,6 +56,17 @@ function loadVideoDetail(data) {
 //         for (let data of chunk) {
 //             try {
 //                 const dataDetail = await loadVideoDetail(data);
+=======
+// function makeChannelDiv(datas) {
+//     const mainVideo = document.getElementById('Smallplayer');
+//     for (let data of datas) {
+//         let dataDetail = loadVideoDetail(data)
+//             .then((dataDetail) => {
+                
+//             })
+//     }
+// }
+>>>>>>> js_1
 
 // Search On '21 아래 부분 div 만들기
 function makeChannelDiv(datas) {
