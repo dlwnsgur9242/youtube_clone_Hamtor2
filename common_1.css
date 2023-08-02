@@ -49,11 +49,12 @@ html, body {
 #Youtube_Page {
     width: 100%;
     height: 100%;
-    border: 1px solid red;
+    background-color: #000;
+    /* border: 1px solid red; */
 }
 
 #Nav {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     padding: 0 16px;
     display: flex;
     justify-content: space-between;
@@ -64,13 +65,6 @@ html, body {
     left: 0;
     background-color: #212121;
   }
-
-/*nav_but_icon hamburger 버튼 */
-#nav_but_icon {
-    display: inline-flex;
-    align-items: center;
-}
-
 /*youtube 로고 버튼*/
 #nav_but{
     display: inline-flex;
@@ -95,7 +89,6 @@ html, body {
     height: 40px;
     justify-content: center;
     align-items: flex-start;
-    gap: 4px;
     flex-shrink: 0;
 }
 /*상단 검색창 서브블럭*/
@@ -106,7 +99,6 @@ html, body {
     border-radius: 2px 0px 0px 2px;
     background: #121212;
 }
-
 /*상단 Profile 메인블럭*/
 #nav_Profile{
     display: flex;
@@ -126,8 +118,8 @@ html, body {
 }
 #nav_pic img{
     display: flex;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     justify-content: center;
     align-items: center;
 }
@@ -165,12 +157,22 @@ html, body {
     height: 24px;
 }
 
+#nav_but,
+#nav_searchBox,
+#nav_profile {
+    display: flex;
+    align-items: center;
+    background-color: #212121;
+}
+
+
 /* hamburger 아이콘 */
 #nav_but_icon{
-    width: 20px;
-    height: 10px;
-    position: relative;
+    border: none;
+    padding: 5px 10px;
+    background-color: transparent;
     cursor: pointer;
+    line-height: 5px;
 }
 
 #nav_but_icon span{
@@ -208,7 +210,7 @@ html, body {
 /* youtube 아이콘 */
 #nav_but_Logo {
     display: flex;
-    padding: 18px 14px 18px 16px;
+    padding: 10px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;   
@@ -216,47 +218,48 @@ html, body {
 #nav_but_Logo img{
     width: 90px;
     height: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+
 }
-/*상단 검색창*/
+/*상단 검색창 -> 아래 검색 입력란과 중복 적용되어 주석처리*/
 #nav_search_Place {
-    width: 362px;
-    height: 40%;
-    border: 2px solid #303030;
+    /* width: 85%;
+    height: 100%;
+    border: 2px solid #dbdbdb;
     padding: 0 20px;
     font-size: 16px;
-    text-transform: capitalize;
+    text-transform: capitalize; */
 }
 
 /* 검색 입력란 스타일링 */
 #search_input {
-    flex: auto;
-    border: none;
-    outline: none;
-    width: 362px;
-    height: 40px;
-    border-radius: 0px; /* 검색 입력란을 직사각형 모양으로 설정 */
-    background-color: #212121;
+    width: 360px;
+    height: 32px;
+    border: 1px solid #303030;
+    background-color: #121212;
+    font-size: 16px;
+    padding: 3px 8px;
 }
 
 /* 상단 search 아이콘 박스*/
-#nav_search_Box_But{
-    display: flex;
-    width: 50px;
-    height: 25px;
-    background: #303030;
-    border: 2px solid #303030;
-    padding: 5px 0;
+#nav_search_Box_But_icon{
+    border: 1px solid #303030;
+    background-color: #303030;
     border-left: none;
+    height: 32px;
+    width: 45px;
+    padding: 3px 8px;
+    margin-left: 16px;
+    display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 /*search 아이콘*/
 #nav_search_Box_But_icon img{
     width: 24px;
     height: 24px;
-    flex-shrink: 0;
 }
 
 /*mic 아이콘*/
@@ -275,24 +278,29 @@ html, body {
 
 #nav_profile img{
     display: flex;
-    padding: 4px 14px;
+    padding: 4px 4px;
     align-items: flex-start;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 #View_Page {
-    margin-top: 60px; /* #Orange의 높이만큼 여백을 주어 #Yellow를 아래로 밀어줍니다 */
+    margin-top: 56px;
     width: 100%;
-    height: 90%;
-    border: 1px solid yellow;
+    /* height: 100%; */
     display: flex;
-    flex-wrap: wrap;
-    position: relative;
+    /* flex-wrap: wrap; */
+    /* position: relative; */
+    justify-content: space-between;
   }
-/* sidebar */
+
+/* sidebar 스크롤바 숨김 */
+::-webkit-scrollbar {
+    display:none;
+}
+
 #Sidebar {
-    border: 1px solid green;
-    width: 240px;
+    /* border: 1px solid green; */
+    width: 260px;
     position: fixed;
     top: 56px;
     left: 0;
@@ -302,39 +310,68 @@ html, body {
     overflow-y: scroll;
     background-color: #212121;
     color: #fff;
+    z-index: 1;
+}
+
+.sidebar__section__link {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    align-items: center;
+    font-size: 14px;
+    padding: 0 20px;
+    height: 40px;
+}
+
+.sidebar__section__link img {
+    margin-right: 10px;
+    border-radius: 50%;
 }
 
 #Sid_Top {
-    display: flex;
-    padding: 12px 0px;
+    /* display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; */
+    padding: 8px 0px;
+    /* border-bottom: 1px solid #303030; */
 }
 
 #Sid_Top-2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    /* border-bottom: 1px solid #303030; */
 }
 
 #Sid_Subscrip{
     display: flex;
-    padding-top: 12px;
+    /* padding-top: 12px; */
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    /* border-bottom: 1px solid #303030; */
 }
 
 #Sid_More-From {
     display: flex;
-    padding-top: 12px;
+    /* padding-top: 12px; */
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
 }
+
+h1 {
+    padding: 8px 24px;
+    font-size: 13px;
+    color: #AAAAAA;
+}
+
+/* #Sidebar > hr {
+    border: none;
+    height: 1px;
+    background-color: #303030;
+} */
+
 /* 사이드 배 내부에있는 버튼들 */
-#links {
+/* #links {
     display: block;
     width: 100%;
     padding: 10px 20px;
@@ -345,7 +382,7 @@ html, body {
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
-}
+} */
 
 #nav_Btu {
         display: flex;
@@ -364,29 +401,22 @@ html, body {
 }
 
 #Main_Page {
-    width: 80%;
+    width: 90%;
     height: 100%;
-    left:250px;
-    border: 1px solid skyblue;
+    margin-left: 253px ;
+    background-color: #000;
 }
 
 #Top_Menu {
-    width: 80%;
-    left:250px;
-    height: 10%;
-    border: 1px solid blue;
+    width: 100%;
 }
 
 .Top_Menu {
-    position: fixed;
-    top: 56px;
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
     width: 100%;
-    height: 60px;
-    left:240px;
-    right:0;
-    background-color: #413e3e;
-    border-top: 1px solid #dbdbdb;
-    border-bottom: 1px solid #dbdbdb;
+    height: 56px;
+    background-color: #212121;
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -394,30 +424,36 @@ html, body {
     overflow-y: hidden;
 }
 .Top_Menu-options.active{
-    color: #fff;
-    background: #242424;
+    background-color: white;
+    color: #030303;
+}
+.Top_Menu-options:first-child {
+    margin-left: 50px;
 }
 .Top_Menu-options{
-    flex: 0 0 auto;
-    padding: 10px 20px;
-    border-radius: 50px;
-    background: #f0f0f0;
-    border: 1px solid #dbdbdb;
-    text-transform: capitalize;
-    margin-right: 10px;
-    color: #242424;
-    font-size: 15px;
+    border: 1px solid #aaa;
+    background-color: #303030;
+    color: #fff;
+    font-size: 14px;
+    padding: 0 12px;
+    line-height: 30px;
+    border-radius: 16px;
+    margin: 12px 12px 12px 0;
     cursor: pointer;
 }
 /* .Frame12 */
 #Video_Container {
     width: 100%;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    background-color: #000;
+    color: white;
+} 
+#Video_Container > div{
+    margin: 10px;
 }
 
 /* Thumbnail */
@@ -466,7 +502,6 @@ html, body {
     align-items: center;
     flex-shrink: 0;    
 }
-
 /* VideoTime */
 .VideoTime{
     display: inline-flex;
@@ -495,9 +530,14 @@ html, body {
 /* thumbnail-profile-pic */
 .thumbnail_profile_pic{
     display: flex;
-    padding: 12px 12px 26px 0px;
+    /* padding: 12px 12px 26px 0px; */
     align-items: flex-start;
     gap: 10px;    
+    border-radius: 50%;
+    margin-top: 12px;
+    margin-right: 12px;
+    width: 30px;
+    height: 30px;
 }
 /* User-avatar */
 .User_avatar{
@@ -527,22 +567,32 @@ html, body {
     display: flex;
     padding-top: 12px;
     align-items: flex-start;
+    font-weight: 700;
     gap: 10px;
 }
 /* thumbnail_desc_title_text */
 .thumbnail_desc_title_text{
     width: 204px;
     color: var(--white-color, #FFF);
-    font-family: Roboto;
+    font-family: sans-serif;
     font-size: 12px;
     font-style: normal;
-    font-weight: 700;
     line-height: normal;
 }
+.thumbnail_desc_info{
+    text-decoration: none;
+    color: var(--gray-color, #AAA);
+    font-family: sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
 /* Chanel_name */
 .Chanel_name{
     color: var(--gray-color, #AAA);
-    font-family: Roboto;
+    font-family: sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -551,7 +601,7 @@ html, body {
 /* Time */
 .Time{
     color: var(--gray-color, #AAA);
-    font-family: Roboto;
+    font-family: sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
