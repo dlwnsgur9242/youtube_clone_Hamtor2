@@ -333,14 +333,14 @@ html, body {
     flex-direction: column;
     align-items: flex-start; */
     padding: 8px 0px;
-    border-bottom: 1px solid #303030;
+    /* border-bottom: 1px solid #303030; */
 }
 
 #Sid_Top-2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border-bottom: 1px solid #303030;
+    /* border-bottom: 1px solid #303030; */
 }
 
 #Sid_Subscrip{
@@ -348,7 +348,7 @@ html, body {
     /* padding-top: 12px; */
     flex-direction: column;
     align-items: flex-start;
-    border-bottom: 1px solid #303030;
+    /* border-bottom: 1px solid #303030; */
 }
 
 #Sid_More-From {
