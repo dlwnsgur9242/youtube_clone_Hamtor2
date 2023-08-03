@@ -8,7 +8,7 @@ async function getVideoList() {
 }
 
 // API로 비디오의 세부 데이터 받기
-function getVideoDetail(data) {
+async function getVideoDetail(data) {
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
 
@@ -50,32 +50,42 @@ async function getChannelInfo(channelName) {
 
 
 // 비디오 목록 API 불러와 홈 화면에 보여주기
-function loadVideoList() {
+async function loadVideoList() {
+    try {
+        let videoList = await getVideoList();
+        makeHomeDiv(videoList);
+    } catch(error) {
+        console.error("Failed to load video list", error);
+    }
+} window.addEventListener("DOMContentLoaded", loadVideoList);
     
-    /* 
-    let xhr = new XMLHttpRequest(); // 서버와 통신하기 위한 XMLHttpRequest 객체 
-    xhr.open("GET", "http://oreumi.appspot.com/video/getVideoList");
-    xhr.send();
+     
+    // let xhr = new XMLHttpRequest(); // 서버와 통신하기 위한 XMLHttpRequest 객체 
+    // xhr.open("GET", "http://oreumi.appspot.com/video/getVideoList");
+    // xhr.send();
 
-    xhr.onload = async () => {
-        // 받아 온 JSON 형식의 응답데이터를 비동기적으로 파싱하여 data 변수에 할당
-        let data = await (JSON.parse(xhr.responseText));
-        // 받아 온 비디오리스트를 가공하여 홈 화면에 보여줌
-        makeHomeDiv(data);
-    }*/
+    // xhr.onload = async () => {
+    //     // 받아 온 JSON 형식의 응답데이터를 비동기적으로 파싱하여 data 변수에 할당
+    //     let data = await (JSON.parse(xhr.responseText));
+    //     // 받아 온 비디오리스트를 가공하여 홈 화면에 보여줌
+    //     makeHomeDiv(data);
+    // }
 
-    makeHomeDiv(getVideoList())
-}
+    // makeHomeDiv(getVideoList())
+
 
 // 입력 받은 데이터를 통해 HTML div 코드 작성 : ver Home
-function makeHomeDiv(datas) {
+async function makeHomeDiv(datas) {
 
     // Video_Container(ID:purple 이었던 것)으로 변경
     let videoList = document.getElementById('Video_Container')
 
     for (let data of datas) {
-        let dataDetail = loadVideoDetail(data)
-            .then((dataDetail) => {
+        try {
+        
+        let dataDetail = await getVideoDetail(data);
+        let avatarName = getVideoImgInfo(dataDetail.video_id);
+        
 
                 //let avatarName = randomAvatarPic(dataDetail.video_id);
                 
@@ -138,12 +148,12 @@ function makeHomeDiv(datas) {
 
                 // 구성 요소 적용
                 videoList.appendChild(thumbnailItem);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }
+            } catch (error) {
+                console.error("Failed to load video detail", error);
+            }
+            };
 }
+
 
 // 입력 받은 데이터를 통해 HTML div 코드 작성
 // makeHomeDiv 함수를 범용성 있게 개선 => 검색, channel 영상 목록 등에 사용 (makeHomeDiv 함수 완성 후 작성 예정)
@@ -170,18 +180,22 @@ let searchBox = document.getElementById("nav_searchBox");
 // nav_search_Box_But : 검색 버튼
 let searchButton = document.getElementById("nav_search_Box_But");
 
+
+
 // 검색 함수
-function searchVideo(){
-    let searchKeyword = searchBox.value; // 검색어 
+async function searchVideo(){
+    let searchKeyword = searchBox.value.toLowerCase(); // 검색어 
 
-    // 검색어가 포함된 제목의 영상으로 재구성
-    getVideoList().then((videoList) => {
-        let filteredVideoList = videoList.filter((video) =>
-            video.video_title.toLowerCase().includes(searchKeyword.toLowerCase())
-        );
-        makeVideoDiv(filteredVideoList);
-    });
-
+    try {
+        let videoList = await getVideoList();
+        let filteredVideoList = videoList.filter((video) => {
+            // video.video_title이 존재하고, 검색어가 포함된 제목의 영상을 필터링
+            return video.video_title && video.video_title.toLowerCase().includes(searchKeyword);
+        });
+        makeHomeDiv(filteredVideoList);
+    } catch (error) {
+        console.error("Failed to search video", error);
+    }
 }
 
 // '검색 버튼' 클릭 시 검색 동작
