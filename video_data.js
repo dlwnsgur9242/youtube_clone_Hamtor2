@@ -73,7 +73,7 @@ function searchVideoList(){
 }
 
 
-function loadVideoInfo(){
+function loadVideoInfo(videoID){
     /* 
     HTML이 미완성이므로 하드 코딩 상태 
     search by Video Id
@@ -81,7 +81,7 @@ function loadVideoInfo(){
     */
     
     // 선택한 videoID를 입력하도록 후에 변경
-    let videoID = 10
+    videoID = 10
 
     let xhr = new XMLHttpRequest();
 
