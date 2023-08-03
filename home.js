@@ -77,10 +77,26 @@ function makeHomeDiv(datas) {
         let dataDetail = loadVideoDetail(data)
             .then((dataDetail) => {
 
-               
+                //let avatarName = randomAvatarPic(dataDetail.video_id);
+                
+                /* 구성 요소
+                최상위 : thumbnailItem
+                상위 : thumbnailImages, thumbnail
+                중위 : thumbnailProfilePic, thumbnailDesc
+                하위 : thumbnailDescTitle, thumbnailDescInfo
+
+                thumbnailItem = thumbnailImages + thumbnail(thumbnailProfilePic + thumbnailDesc(thumbnailDescTitle + thumbnailDescInfo))
+
+                thumbnailItem 은 thumbnail 와 thumbnailImages 으로 구성
+                thumbnail 은 thumbnailProfilePic 와 thumbnailDesc 으로 구성
+                thumbnailDesc 은 thumbnailDescTitle 와 thumbnailDescInfo 으로 구성
+                */
+
+                // thumbnailItem : 최상위 구성 요소
                 let thumbnailItem = document.createElement("div");
                 thumbnailItem.classList.add("thumbnail_item");
 
+                // thumbnailImages, thumbnail : 상위 구성 요소
                 let thumbnailImages = document.createElement("img");
                 thumbnailImages.classList.add("thumbnail_images");
                 thumbnailImages.src = dataDetail.image_link;
@@ -88,19 +104,16 @@ function makeHomeDiv(datas) {
                 let thumbnail = document.createElement("div");
                 thumbnail.classList.add("thumbnail");
 
+                // thumbnailProfilePic, thumbnailDesc : 중위 구성 요소 
                 let thumbnailProfilePic = document.createElement("img");
                 thumbnailProfilePic.classList.add("thumbnail_profile_pic");
-                thumbnailProfilePic.src = `./image/Avatar/${avatarName}`
-
-                // channel Data => channel_profile 가져오는데 사용
-                let channelDetail = getChannelInfo(dataDetail.video_channel);
-                let channelProfile = document.createElement("img");
-                channelProfile.classList.add("channel_profile");
-                channelProfile.src = channelDetail.channel_profile;
+                let channelDetail = getChannelInfo(dataDetail.video_channel); // channel_profile 가져오는데 사용
+                thumbnailProfilePic.src = channelDetail.channel_profile /* Err: 채널의 프로필을 온전히 가져오지 못하고 있음 */
 
                 let thumbnailDesc = document.createElement("div");
                 thumbnailDesc.classList.add("thumbnail_desc");
 
+                // thumbnailDescTitle, thumbnailDescInfo : 하위 구성 요소
                 let thumbnailDescTitle = document.createElement("div");
                 thumbnailDescTitle.classList.add("thumbnail_desc_title");
                 thumbnailDescTitle.textContent = dataDetail.video_title;
@@ -112,6 +125,8 @@ function makeHomeDiv(datas) {
                 thumbnailDescInfo.textContent = dataDetail.upload_date;
 
 
+
+                // 구성 요소 결합
                 thumbnailDesc.appendChild(thumbnailDescTitle);
                 thumbnailDesc.appendChild(thumbnailDescInfo);
 
@@ -121,6 +136,7 @@ function makeHomeDiv(datas) {
                 thumbnailItem.appendChild(thumbnailImages);
                 thumbnailItem.appendChild(thumbnail);
 
+                // 구성 요소 적용
                 videoList.appendChild(thumbnailItem);
             })
             .catch((error) => {
