@@ -50,28 +50,30 @@ async function getChannelInfo(channelName) {
 
 
 // 비디오 목록 API 불러와 홈 화면에 보여주기
-async function loadVideoList() {
-    try {
-        let videoList = await getVideoList();
-        makeHomeDiv(videoList);
-    } catch(error) {
-        console.error("Failed to load video list", error);
+async function loadVideoList(){
+    let xhr = new XMLHttpRequest(); // 서버와 통신하기 위한 XMLHttpRequest 객체 
+    xhr.open("GET", "http://oreumi.appspot.com/video/getVideoList");
+    xhr.send();
+
+    xhr.onload = async () => {
+        // 받아 온 JSON 형식의 응답데이터를 비동기적으로 파싱하여 data 변수에 할당
+        let data = await (JSON.parse(xhr.responseText));
+        // 받아 온 비디오리스트를 가공하여 홈 화면에 보여줌
+        makeHomeDiv(data);
     }
-} window.addEventListener("DOMContentLoaded", loadVideoList);
     
-     
-    // let xhr = new XMLHttpRequest(); // 서버와 통신하기 위한 XMLHttpRequest 객체 
-    // xhr.open("GET", "http://oreumi.appspot.com/video/getVideoList");
-    // xhr.send();
-
-    // xhr.onload = async () => {
-    //     // 받아 온 JSON 형식의 응답데이터를 비동기적으로 파싱하여 data 변수에 할당
-    //     let data = await (JSON.parse(xhr.responseText));
-    //     // 받아 온 비디오리스트를 가공하여 홈 화면에 보여줌
-    //     makeHomeDiv(data);
-    // }
-
     // makeHomeDiv(getVideoList())
+}
+
+// async function loadVideoList() {
+//     try {
+//         let videoList = await getVideoList();
+//         makeHomeDiv(videoList);
+//     } catch(error) {
+//         console.error("Failed to load video list", error);
+//     }
+// } window.addEventListener("DOMContentLoaded", loadVideoList);
+
 
 
 // 입력 받은 데이터를 통해 HTML div 코드 작성 : ver Home
