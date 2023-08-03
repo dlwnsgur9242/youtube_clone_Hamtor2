@@ -8,31 +8,21 @@
     /는 클래스이름으로 사용못하기때문에 _로 표시
     대문자_대문자 구조 in의 i는 소문자로
 */
-
-.Video_Container {   /* video 페이지의 전체 section */
+.Video_Page { /* .Primary + .Secondary */
+    display: flex;
     width: 100%;
     height: 100%;
-    padding: 0px 164px 0px 162px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #181818;
 }
-
-.Primary {   /* video-container의 하위 1번 */
+.Primary {   /* Youtube_Page 하위 1번 */
     display: flex;
     width: 664px;
-    height: 968px;
     padding: 24px 0px 0px 24px;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     flex-shrink: 0;
     background: #181818;
-}
-#video_Page {
-    width: 100%;
-    height: 100%;
-    background-color: black;
 }
 .View_Page_3 {
     width: 100%;
@@ -297,18 +287,22 @@
     align-items: flex-start;
     gap: 10px;
 }
-.Comment-Area{/* primary의 하위 3번 Comment의 하위 2번 Comment 하위 2번*/
-    display: flex;
-    width: 584px;
-    padding: 7px 0px 8px 0px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+.Comment-Area input {/* primary의 하위 3번 Comment의 하위 2번 Comment 하위 2번*/
+    width: 100%;
+    color: #fff;
+    background-color: transparent;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #4b4b4b;
+    font-size: 16px;
+}
+.Comment__Area input::placeholder{
+    color: #aaa;
+    font-size: 16px;
 }
 .Comments{ /*primary의 하위 4번*/
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 .Comment_in_Comments{/*primary의 하위 4번 Comments의 하위 1번*/
     display: flex;
@@ -330,13 +324,24 @@
     flex-shrink: 0;
 }
 .Comment_Header {/*primary의 하위 4번 Comments의 하위 1번 Comment의 하위 2번 Comment의 하위 1번 */
+    color: var(--white-color, #FFF);
     display: flex;
-    padding-bottom: 0px;
-    align-items: flex-start;
-    align-self: stretch;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 4px;
 }
+.comment__name{/*primary의 하위 4번 Comments의 하위 1번 Comment의 하위 2번 Comment의 하위 1번 코맨트 단 사람 이름*/
+    font-weight: 800;
+}
+
+.comment__time{/*primary의 하위 4번 Comments의 하위 1번 Comment의 하위 2번 Comment의 하위 1번 코맨트 단 시간*/
+    color: #aaa;
+    font-size: 13px;
+}
+
 .Comment_Text{/*primary의 하위 4번 Comments의 하위 1번 Comment의 하위 2번 Comment의 하위 2번 */
     display: flex;
+    color: var(--white-color, #FFF);
     padding: 2px 0px;
     align-items: flex-start;
     gap: 10px;
@@ -349,7 +354,7 @@
     align-self: stretch;
 }
 
-.Secondary {  /* video-container의 하위 2번 */
+.Secondary {
     display: flex;
     width: 426px;
     height: 968px;
@@ -360,33 +365,52 @@
     background: #181818;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.Content{/* secondary의 하위 1번 */
+
+.Content {
     display: flex;
     padding: 24px 24px 0px 0px;
     flex-direction: column;
     align-items: flex-start;
 }
-
-
-.Top_Menu {   /* secondary의 하위 1번 Content의 하위 1번*/
+.Video_Top_Menu{/* secondary의 하위 1번 Content의 하위 1번 Top_Menu의 하위 1번 Top-Menu/Item의 하위 1번 .Top-Menu/Button*/
     display: flex;
     width: 402px;
     padding: 1px 12px 2px 0px;
     align-items: flex-start;
 }
-.Top_Menu_Item{ /* secondary의 하위 1번 Content의 하위 1번 Top_Menu의 하위 1번 Top-Menu/Item*/
+
+.Video_Top_Menu_Item{ /* secondary의 하위 1번 Content의 하위 1번 Top_Menu의 하위 1번 Top-Menu/Item*/
     display: flex;
     padding: 8px 8px 8px 0px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
 }
-.Top_Menu_Button {/* secondary의 하위 1번 Content의 하위 1번 Top_Menu의 하위 1번 Top-Menu/Item의 하위 1번 .Top-Menu/Button*/
+
+
+.Top_Menu_Button_text_1{/* secondary의 하위 1번 Content의 하위 1번 Top_Menu의 하위 1번 Top-Menu/Item의 하위 1번 .Top-Menu/Button*/
     display: flex;
     padding: 8px 12px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    border-radius: 32px;
+    background: #FFF;
+}
+.Top_Menu_Button_text_2{
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    border: 0.3px solid var(--gray-color, #AAA);
+    background: var(--border-color, #303030);
+    color: var(--white-color, #FFF);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .Videos {   /* secondary의 하위 2번 */
@@ -395,16 +419,21 @@
     justify-content: center;
     align-items: flex-start;
 }
+
 .Video{ /* secondary의 하위 2번 Videos하위 */
     display: flex;
     padding-top: 8px;
     align-items: flex-start;
 }
-.Thumbnail {/* secondary의 하위 2번 Videos하위 video하위 1번 */
+
+.Thumbnail_Video {/* secondary의 하위 2번 Videos하위 video하위 1번 */
     display: flex;
-    padding-top: 8px;
+    padding: 0px 8px 0px 0px;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
 }
+
 .Video-Text {/* secondary의 하위 2번 Videos하위 video하위 2번 */
     display: flex;
     width: 226px;
