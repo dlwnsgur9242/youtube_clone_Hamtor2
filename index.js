@@ -2,7 +2,7 @@
 
 // API로 비디오 목록 데이터 받기
 async function getVideoList() {
-    let response = await fetch("http://oreumi.appspot.com/video/getVideoList");
+    let response = await fetch("https://oreumi.appspot.com/video/getVideoList");
     let videoList = await response.json();
     return videoList;
 }
@@ -13,7 +13,7 @@ async function getVideoDetail(data) {
         let xhr = new XMLHttpRequest();
 
         // ${data.video_id} 를 사용하여 data 객체의 video_id 값을 동적으로 넣어줌 (id # 순서대로 불러오지는 못했음)
-        xhr.open("GET", `http://oreumi.appspot.com/video/getVideoInfo?video_id=${data.video_id}`);
+        xhr.open("GET", `https://oreumi.appspot.com/video/getVideoInfo?video_id=${data.video_id}`);
         xhr.send();
 
         xhr.onload = () => {
@@ -31,7 +31,7 @@ async function getVideoDetail(data) {
 async function getChannelInfo(channelName) {
   
     // API 통해서 데이터 수신
-    let url = `http://oreumi.appspot.com/channel/getChannelInfo`;
+    let url = `https://oreumi.appspot.com/channel/getChannelInfo`;
   
     let response = await fetch(url, {
         method: "POST",
@@ -52,7 +52,7 @@ async function getChannelInfo(channelName) {
 // 비디오 목록 API 불러와 홈 화면에 보여주기
 async function loadVideoList(){
     let xhr = new XMLHttpRequest(); // 서버와 통신하기 위한 XMLHttpRequest 객체 
-    xhr.open("GET", "http://oreumi.appspot.com/video/getVideoList");
+    xhr.open("GET", "https://oreumi.appspot.com/video/getVideoList");
     xhr.send();
 
     xhr.onload = async () => {

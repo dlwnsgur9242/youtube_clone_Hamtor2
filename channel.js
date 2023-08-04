@@ -10,7 +10,7 @@ function loadVideoList() {
     let xhr = new XMLHttpRequest();
     let data;
 
-    xhr.open("GET", "http://oreumi.appspot.com/video/getVideoList");
+    xhr.open("GET", "https://oreumi.appspot.com/video/getVideoList");
     xhr.send();
 
     xhr.onload = async () => {
@@ -28,7 +28,7 @@ function loadVideoDetail(data) {
         let xhr = new XMLHttpRequest();
 
         // ${data.video_id} 를 사용하여 data 객체의 video_id 값을 동적으로 넣어줌 (id # 순서대로 불러오지는 못했음)
-        xhr.open("GET", `http://oreumi.appspot.com/video/getVideoInfo?video_id=${data.video_id}`);
+        xhr.open("GET", `https://oreumi.appspot.com/video/getVideoInfo?video_id=${data.video_id}`);
         xhr.send();
 
         xhr.onload = () => {

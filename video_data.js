@@ -11,20 +11,20 @@ let url = new URL(currentURL);
 let videoId = url.searchParams.get("id");
 
 async function getVideoList() {
-    let response = await fetch("http://oreumi.appspot.com/video/getVideoList");
+    let response = await fetch("https://oreumi.appspot.com/video/getVideoList");
     let videoListData = await response.json();
     return videoListData;
 }
 
 async function getVideoInfo(videoId) {
-    let url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`
+    let url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`
     let response = await fetch(url);
     let videoData = await response.json();
     return videoData;
 }
 
 async function getChannelInfo(channelName) {
-    let url = `http://oreumi.appspot.com/channel/getChannelInfo`;
+    let url = `https://oreumi.appspot.com/channel/getChannelInfo`;
 
     let response = await fetch(url, {
         method: "POST",
@@ -40,7 +40,7 @@ async function getChannelInfo(channelName) {
 
 async function getChannelVideo() {
     let response = await fetch(
-        `http://oreumi.appspot.com/channel/getChannelVideo?video_channel=${channelName}`
+        `https://oreumi.appspot.com/channel/getChannelVideo?video_channel=${channelName}`
     );
     let videoListData = await response.json();
     return videoListData;
@@ -214,7 +214,6 @@ async function createVideoItem(videoList) {
 // }
 
 
-<<<<<<< HEAD
 function loadVideoInfo(videoID){
     /* 
     HTML이 미완성이므로 하드 코딩 상태 
@@ -238,32 +237,11 @@ function loadVideoInfo(videoID){
                 } else {
                     // HTML 코드 작성용 변수
                     let videoInfo = '';
-=======
-// function loadVideoInfo(){
-//     /* 
-//     HTML이 미완성이므로 하드 코딩 상태 
-//     search by Video Id
-//     show Video Info
-//     */
-    
-//     // 선택한 videoID를 입력하도록 후에 변경
-//     let videoID = 10
-
-//     let xhr = new XMLHttpRequest();
-
-//     xhr.onreadystatechange = function(){
-//         if(xhr.readyState === XMLHttpRequest.DONE){
-//             if (xhr.status === 200){
-//                 // 데이터가 잘 받아와 졌을때
-//                 let data = JSON.parse(xhr.responseText);
-
-//                 if (data.Response === 'False'){
-//                     alert('영상 정보를 가져오는데 실패했습니다.\nResponse Error');
-//                 } else {
-//                     // HTML 코드 작성용 변수
-//                     let videoInfo = '';
->>>>>>> js_2
-                    
+                }
+            }
+        }
+    }
+}
 //                     // 영상의 모든 정보 입력
 //                     videoInfo += '<h2>' + data.video_title + '</h2>';
 //                     videoInfo += '<p><strong>채널명: </strong>' + data.video_channel + '</p>';
@@ -287,5 +265,3 @@ function loadVideoInfo(videoID){
 //     encodeURIComponent(videoID), true);
 
 //     xhr.send();
-
-// }
