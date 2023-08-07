@@ -449,7 +449,7 @@
 }
 .Content{/* secondary의 하위 1번 */
     width: 100%;
-    height: 10%;
+    height: 100%;
     display: flex;
     padding: 24px 24px 0px 0px;
     flex-direction: column;
@@ -480,8 +480,11 @@
 }
 
 .Video_Top_Menu {
+    width: 100%;
+    height: 5%;
     display: flex;
     flex-direction: row;
+    box-sizing: border-box;
 }
 
 .Video_Top_Menu_Item button {
@@ -511,11 +514,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    box-sizing: border-box;
 }
 .Video{ /* secondary의 하위 2번 Videos하위 */
     display: flex;
     padding-top: 8px;
     align-items: flex-start;
+}
+#Video{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
 }
 .Thumbnail {/* secondary의 하위 2번 Videos하위 video하위 1번 */
     display: flex;
@@ -528,4 +537,8 @@
     padding: 7px 0px;
     flex-direction: column;
     align-items: flex-start;  
+}
+
+.thumbnail_desc_title {
+    color: #fff;
 }
