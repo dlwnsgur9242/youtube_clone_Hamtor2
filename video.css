@@ -3,16 +3,25 @@
     /는 클래스이름으로 사용못하기때문에 _로 표시
     대문자_대문자 구조 in의 i는 소문자로
 */
-.Video_Page { /* .Primary + .Secondary */
-    display: flex;
+
+/* .Video_Container {
     width: 100%;
     height: 100%;
     padding: 0px 164px 0px 162px;
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+.View_Page_3 {
+    width: 100%;
+    height: 100%;
+    margin-top: 56px;
+    display: flex;
+    background-color: black;
 }
-.Primary {   /* Youtube_Page 하위 1번 */
+
+.Primary {   /* video-container의 하위 1번 */
     display: flex;
     width: 50%;
     height: 100%;
@@ -28,13 +37,8 @@
     width: 100%;
     height: 100%;
     background-color: black;
-}
-.View_Page_3 {
-    width: 100%;
-    height: 100%;
-    margin-top: 56px;
-    display: flex;
-}
+} */
+
 .Video_player {   /* primary의 하위 1번 */
     width: 100%;
     /* height: 45%; */
@@ -346,6 +350,8 @@
 
 .Comments{ /*primary의 하위 4번*/
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .Comment_in_Comments{/*primary의 하위 4번 Comments의 하위 1번*/
     display: flex;
@@ -431,37 +437,7 @@
     cursor: pointer;
 }
 
-.Video_Like {/*primary의 하위 4번 Comments의 하위 1번 Comment의 하위 2번 Comment의 하위 3번 Comment_Toolbar 하위*/
-    display: flex;
-    padding: 8px;
-    align-items: flex-start;
-    gap: 10px;
-    width: 20px;
-    height: 20px;
-}
-.Video_Like_Text {/*primary의 하위 4번 Comments의 하위 1번 Comment의 하위 2번 Comment의 하위 3번 Comment_Toolbar 하위*/
-    font-size: 14px;
-    color: #AAA;
-    /* 이름, 8 hours ago와의 간격 */
-    margin-top: 6px;
-    /* 아래 툴박스(좋아요, 싫어요, reply)와의 간격 */
-    margin-bottom: 2px;
-    line-height: 20px;
-}
-.Video_Comment_Reply {/*primary의 하위 4번 Comments의 하위 1번 Comment의 하위 2번 Comment의 하위 3번 Comment_Toolbar 하위*/
-    display: flex;
-    align-items: center;
-    color: #AAA;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    padding: 8px 16px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.Secondary {
+.Secondary {  /* video-container의 하위 2번 */
     display: flex;
     width: 30%;
     height: 100%;
@@ -480,45 +456,27 @@
     align-items: flex-start;
     box-sizing: border-box;
 }
-.Video_Top_Menu{/* secondary의 하위 1번 Content의 하위 1번 Top_Menu의 하위 1번 Top-Menu/Item의 하위 1번 .Top-Menu/Button*/
+
+
+.Top_Menu {   /* secondary의 하위 1번 Content의 하위 1번*/
     display: flex;
     width: 402px;
     padding: 1px 12px 2px 0px;
     align-items: flex-start;
 }
-
-.Video_Top_Menu_Item{ /* secondary의 하위 1번 Content의 하위 1번 Top_Menu의 하위 1번 Top-Menu/Item*/
+.Top_Menu_Item{ /* secondary의 하위 1번 Content의 하위 1번 Top_Menu의 하위 1번 Top-Menu/Item*/
     display: flex;
     padding: 8px 8px 8px 0px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
 }
-
-
-.Top_Menu_Button_text_1{/* secondary의 하위 1번 Content의 하위 1번 Top_Menu의 하위 1번 Top-Menu/Item의 하위 1번 .Top-Menu/Button*/
+.Top_Menu_Button {/* secondary의 하위 1번 Content의 하위 1번 Top_Menu의 하위 1번 Top-Menu/Item의 하위 1번 .Top-Menu/Button*/
     display: flex;
     padding: 8px 12px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    border-radius: 32px;
-    background: #FFF;
-}
-.Top_Menu_Button_text_2{
-    display: flex;
-    padding: 8px 12px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 32px;
-    border: 0.3px solid var(--gray-color, #AAA);
-    background: var(--border-color, #303030);
-    color: var(--white-color, #FFF);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
 .Video_Top_Menu {
@@ -554,21 +512,16 @@
     justify-content: center;
     align-items: flex-start;
 }
-
 .Video{ /* secondary의 하위 2번 Videos하위 */
     display: flex;
     padding-top: 8px;
     align-items: flex-start;
 }
-
-.Thumbnail_Video {/* secondary의 하위 2번 Videos하위 video하위 1번 */
+.Thumbnail {/* secondary의 하위 2번 Videos하위 video하위 1번 */
     display: flex;
-    padding: 0px 8px 0px 0px;
-    flex-direction: column;
+    padding-top: 8px;
     align-items: flex-start;
-    gap: 10px;
 }
-
 .Video-Text {/* secondary의 하위 2번 Videos하위 video하위 2번 */
     display: flex;
     width: 226px;
