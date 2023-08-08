@@ -1,115 +1,130 @@
-// API로 비디오 목록 데이터 받기
-async function getVideoList() {
-  let response = await fetch("https://oreumi.appspot.com/video/getVideoList");
-  let videoList = await response.json();
-  return videoList;
+// 비디오 조회수 포맷팅 함수
+function formatViews(views) {
+  return views.toLocaleString();
 }
 
-// API로 비디오의 세부 데이터 받기
-async function getVideoDetail(data) {
-  let response = await fetch(`https://oreumi.appspot.com/video/getVideoInfo?video_id=${data.video_id}`);
-  let dataDetail = await response.json();
-  return dataDetail;
+// 비디오 정보를 가져오는 함수 (병렬 처리)
+async function getVideoInfo(videoId) {
+  const apiUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  return data;
 }
 
 // API로 채널 데이터 받기
 async function getChannelInfo(channelName) {
-  let url = `https://oreumi.appspot.com/channel/getChannelInfo`;
+  try {
+    const url = `https://oreumi.appspot.com/channel/getChannelInfo`;
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ video_channel: channelName }),
+    });
 
-  let response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ video_channel: channelName }),
+    const channelData = await response.json();
+    return channelData;
+  } catch (error) {
+    console.error("Error fetching channel info:", error);
+    return {};
+  }
+}
+
+// 이미지 로딩을 위한 IntersectionObserver 생성
+const imageObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const lazyImage = entry.target;
+      lazyImage.src = lazyImage.dataset.src;
+      lazyImage.classList.remove('lazy');
+      imageObserver.unobserve(lazyImage);
+    }
   });
+}, {
+  threshold: 0.1, // 뷰포트 내에 10% 이상 들어왔을 때 로딩 시작
+});
 
-  let channelData = await response.json();
-  return channelData;
-}
-
-// API로 비디오 목록 검색
-async function searchVideoList(query) {
-  let response = await fetch(`https://oreumi.appspot.com/video/search?query=${encodeURIComponent(query)}`);
-  let searchResults = await response.json();
-  return searchResults;
-}
-
-// 입력 받은 데이터를 통해 HTML div 코드 작성 : ver Home
-async function makeHomeDiv(datas) {
+// 비디오 목록을 출력하는 함수 (비동기/병렬 처리)
+async function displayVideoList(searchQuery = '') {
   const videoListContainer = document.getElementById('Video_Container');
-  videoListContainer.innerHTML = ""; // 검색 결과를 보여줄 컨테이너 비우기
+  let videoListHtml = ''; // 비디오 정보를 누적할 빈 문자열
 
   try {
-    const avatarPic = ['AlanCooper.svg', 'AlexisSears.svg', 'AnnaWhite.svg', 'JamesGouse.svg', 'JesicaLambert.svg', 'MainProfile.svg', 'MarcusLevin.svg', 'SkylarDias.svg'];
+    // 비디오 정보를 병렬로 가져오고 출력
+    const videoInfoPromises = Array.from({ length: 21 }, (_, videoId) => getVideoInfo(videoId));
+    const videoInfoList = await Promise.all(videoInfoPromises);
 
-    const channelCache = new Map();
+    for (const videoInfo of videoInfoList) {
+      // 검색어 필터링
+      const lowerCaseVideoTitle = videoInfo.video_title.toLowerCase();
+      const lowerCaseVideoChannel = videoInfo.video_channel.toLowerCase();
+      const lowerCaseSearchQuery = searchQuery.toLowerCase();
 
-    const videoDetailPromises = datas.map(data => getVideoDetail(data));
-    const videoDetails = await Promise.all(videoDetailPromises);
-
-    for (let i = 0; i < datas.length; i++) {
-      const data = datas[i];
-      const dataDetail = videoDetails[i];
-      const channelName = dataDetail.video_channel;
-
-      let channelDetail;
-      if (channelCache.has(channelName)) {
-        channelDetail = channelCache.get(channelName);
-      } else {
-        channelDetail = await getChannelInfo(channelName);
-        channelCache.set(channelName, channelDetail);
+      if (searchQuery && !(lowerCaseVideoTitle.includes(lowerCaseSearchQuery) || lowerCaseVideoChannel.includes(lowerCaseSearchQuery))) {
+        continue;
       }
 
-      const avatarName = avatarPic[i % avatarPic.length];
-      const thumbnailImages = `<img class="thumbnail_images" src="${dataDetail.image_link}" alt="Thumbnail Image">`;
-      const thumbnailProfilePic = `<img class="thumbnail_profile_pic" src="${channelDetail.channel_profile}" alt="Channel Profile">`;
-      const thumbnailDescTitle = `<div class="thumbnail_desc_title">${dataDetail.video_title}</div>`;
-      const thumbnailDescInfo = `<div class="thumbnail_desc_info">${dataDetail.video_channel} - ${dataDetail.views} views - ${dataDetail.upload_date}</div>`;
-      const thumbnailDesc = `<div class="thumbnail_desc">${thumbnailDescTitle}${thumbnailDescInfo}</div>`;
-      const thumbnail = `<div class="thumbnail">${thumbnailProfilePic}${thumbnailDesc}</div>`;
-      const thumbnailItem = `<div class="thumbnail_item">${thumbnailImages}${thumbnail}</div>`;
+      // 조회수 포맷팅
+      const formattedViews = formatViews(videoInfo.views);
 
-      videoListContainer.insertAdjacentHTML('beforeend', thumbnailItem);
+      // 채널 정보 가져오기
+      const channelInfo = await getChannelInfo(videoInfo.video_channel);
+
+      // 각각의 비디오 정보를 표시하는 HTML 코드 생성
+      const videoItemHtml = `
+        <div class="video-grid-box">
+          <div class="thumbnail-row">
+            <a href="video_page.html?id=${videoInfo.video_id}">
+              <img class="thumbnail lazy" data-src="${videoInfo.image_link}" alt="Thumbnail" />
+            </a>
+          </div>
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <a href="Channel_page.html?name=${videoInfo.video_channel}">
+                <img class="profile-picture lazy" data-src="${channelInfo.channel_profile}" alt="Thumbnail"/>
+              </a>
+            </div>
+            <div class="video-info">
+              <p class="video-title">${videoInfo.video_title}</p>
+              <p class="video-stats">조회수: ${formattedViews} 회 &#183; ${videoInfo.upload_date}</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+      videoListHtml += videoItemHtml;
     }
+
+    // 비디오 목록 출력
+    videoListContainer.innerHTML = videoListHtml;
+
+    // 이미지 태그에 대해 이미지 지연 로딩 적용
+    const lazyImages = document.querySelectorAll('.lazy');
+    lazyImages.forEach((lazyImage) => {
+      imageObserver.observe(lazyImage);
+    });
   } catch (error) {
-    console.error("Failed to load video detail", error);
+    console.error("Error displaying video list:", error);
   }
 }
 
-// 검색 버튼 클릭 시 동작
-document.getElementById('nav_search_Box_But_icon').addEventListener('click', () => {
-  performSearch();
+// 검색 버튼 클릭 이벤트 핸들러 등록
+document.getElementById('nav_search_Box_But').addEventListener('click', () => {
+  const searchQuery = document.getElementById('search_input').value;
+  displayVideoList(searchQuery); // 검색 쿼리에 따라 비디오를 표시
 });
 
-// 엔터 키 누를 시 동작
-document.getElementById('search_input').addEventListener('keyup', event => {
+// 검색 창에서 Enter 키 이벤트 핸들러 등록
+document.getElementById('search_input').addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
-    performSearch();
+    const searchQuery = document.getElementById('search_input').value;
+    displayVideoList(searchQuery); // 검색 쿼리에 따라 비디오를 표시
   }
 });
 
-
-// 비디오 아이템 클릭 시 페이지 이동
-document.getElementById('Video_Container').addEventListener('click', async event => {
-  const target = event.target.closest('.thumbnail_item');
-  if (target) {
-    const index = Array.from(target.parentElement.children).indexOf(target);
-    const videoList = await getVideoList();
-    const selectedVideo = videoList[index];
-    window.location.href = `channel.html?video_id=${selectedVideo.video_id}`;
-  }
+// 페이지 로드 시 초기 비디오 목록 표시
+window.addEventListener('DOMContentLoaded', () => {
+  // 초기 비디오 목록 출력 후 이미지 로딩 시작
+  displayVideoList();
 });
-
-// 비디오 목록 로드 및 화면에 표시
-async function loadVideoList() {
-  try {
-    let videoList = await getVideoList();
-    makeHomeDiv(videoList);
-  } catch (error) {
-    console.error('Failed to load video list', error);
-  }
-}
-
-// 페이지 로딩 시 비디오 목록 로드
-loadVideoList();
