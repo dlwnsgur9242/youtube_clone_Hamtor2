@@ -251,7 +251,6 @@ html, body {
     height: 32px;
     width: 45px;
     padding: 3px 8px;
-    margin-left: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -529,6 +528,17 @@ h1 {
     flex-shrink: 0;
 }
 /* thumbnail-profile-pic */
+.profile-picture{
+    display: flex;
+    /* padding: 12px 12px 26px 0px; */
+    align-items: flex-start;
+    gap: 10px;    
+    border-radius: 50%;
+    margin-top: 12px;
+    margin-right: 12px;
+    width: 30px;
+    height: 30px;
+}
 .thumbnail_profile_pic{
     display: flex;
     /* padding: 12px 12px 26px 0px; */
