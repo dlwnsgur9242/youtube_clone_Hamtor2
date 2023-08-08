@@ -11,111 +11,112 @@
 /*
     Channel_Container는 피그마의 Channel_in_Channel입니다
 */
-.Channel_Container {   /* channel 페이지의 전체 section (nav & sidebar 제외) */
-    width: 80%;
+
+html, body {
+    width: 100%;
     height: 100%;
+}
+
+/* *{
+    box-sizing: border-box;
+} */
+
+/* channel 페이지의 전체 section (nav & sidebar 제외) */
+/* #Channel{   
+    display: flex;
+    width: 1200px;
+    height: 977px;
     padding-bottom: 0px;
     flex-direction: column;
     align-items: flex-start;
     flex-shrink: 0;
     background: #181818;
-}
-
-/* 이 아래부터는 channel.html 작업 끝나면 세부적으로 조정해주세요 */
-
-.Channel-Toolbar {    /* .channel-content의 하위 1번 */
+} */
+#Main_Page_2{
     width: 100%;
-    height: 5%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 0px 65px 0px 65px;
-}
-.Toolbars{  /* .channel-content의 하위 1번 Channel-Toolbar의 하위 1번*/
-    display: flex;
-    align-items: flex-start;
-}
-.Toolbar_Menu{/* .channel-content의 하위 1번 Channel-Toolbar의 하위 1번 Toolbars의 하위*/
+    height: 100%;
+    margin-left: 253px ;
+    background-color: #000;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
-.Top_Menu_Item{ /* .channel-content의 하위 1번 Channel-Toolbar의 하위 1번 Toolbars의 하위 Toolbar_Menu의 하위 1번*/
+/* #View_Page_2 {
+    margin-top: 56px;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    /* flex-wrap: wrap; */
+    /* position: relative; */
+    /*justify-content: space-between;
+}*/
+
+#Channel {
+    width: 100%;
 }
-.Border{/* .channel-content의 하위 1번 Channel-Toolbar의 하위 1번 Toolbars의 하위 Toolbar_Menu의 하위 2번*/
-    height: 1px;
-    align-self: stretch;
-    background: var(--gray-color, #AAA);
-}
-.Search{/* .channel-content의 하위 1번 Channel-Toolbar의 하위 2번 */
+
+#Channel_Cover {    /* .channel-container의 하위 3번 */
+    width: 95%;
     display: flex;
-    padding-left: 0px;
-    align-items: flex-start;
-    gap: 202px;
-}
-.Search_Icon{/* .channel-content의 하위 1번 Channel-Toolbar의 하위 2번 Search의 하위 1번*/
-    display: flex;
-    padding: 12px 8px;
-    align-items: flex-start;
-}
-.Search_in_Search_Icon{/* .channel-content의 하위 1번 Channel-Toolbar의 하위 2번 Search의 하위 1번 Search_Icon의 하위*/
-    display: flex;
-    width: 24px;
-    height: 24px;
-    padding: 3px 3.13px 3.12px 3px;
-    justify-content: center;
-    align-items: center;    
-}
-.Search_Btn{/* .channel-content의 하위 1번 Channel-Toolbar의 하위 2번 Search의 하위 2번*/
-    display: flex;
-    padding: 0px 4px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-}
-.Search_Btn_in_Search_Btn{/* .channel-content의 하위 1번 Channel-Toolbar의 하위 2번 Search의 하위 2번 Search_Btn의 하위*/
-    display: flex;
-    padding: 12px;
-    align-items: flex-start;
-    gap: 10px;
-}
-.LeftArrow{/* .channel-content의 하위 1번 Channel-Toolbar의 하위 2번 Search의 하위 2번 Search_Btn의 하위 Search_Btn의 하위*/
-    display: flex;
-    width: 24px;
-    height: 24px;
-    padding: 3.96px 7.455px 3.975px 7.455px;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
-.Channel-Title {    /* .channel-container의 하위 2번 */
+#Channel_Cover img{
     width: 100%;
-    height: 10%;
-    display: flex;
-    padding: 16px 65px 4px 65px;
-    align-items: flex-start;
-    gap: 699px;
+    height: 100%;
+    object-fit: cover;
 }
-.Channel_Profile{ /*Channel-Title의 하위 1번*/
+
+#Channel_title {
+    width: 80%;
+    display: flex;
+    padding: 16px 500px 4px 500px;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* gap: 800px; */
+}
+
+#Channel_profile {
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
-.Channel_Profile_Pic{/*Channel-Title의 하위 1번 Channel_Profile의 하위 1번*/
+.Channel_Profile_Pic{
     display: flex;
-    padding-right: 0px;
+    padding: 0px 40px 0px 60px;
     align-items: flex-start;
     gap: 10px;
 }
-.Chanel_Profile_Name{/*Channel-Title의 하위 1번 Channel_Profile의 하위 2번*/
+
+.User-Avatar{/*Channel-Title의 하위 1번 Channel_Profile의 하위 1번*/
+    display: flex;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+    opacity: 0.6499999761581421;
+}
+
+.info{/*Channel-Title의 하위 1번 Channel_Profile의 하위 2번*/
     display: flex;
     padding: 18px 0px;
     flex-direction: column;
-    align-items: flex-start;    
+    align-items: flex-start;
+    color: #fff;
 }
-.Channel_Subscribes_Btn{/*Channel-Title의 하위 2번*/
+
+.info .Channelprofile_name {
+    font-size: 24px;
+    color: #fff;
+}
+
+.info .Channelprofiile_subscribers{
+    font-size: 14px;
+    color: #AAA;
+}
+
+.Subscribers_But{/*Channel-Title의 하위 2번*/
     display: flex;
     width: 124px;
     padding: 22px 4px;
@@ -123,58 +124,171 @@
     align-items: flex-start;
     gap: 10px;
 }
-.Channel_Subscribes_Btn_in_Channel_Subscribes_Btn{/*Channel-Title의 하위 2번 Channel_Subscribes_Btn의 하위*/
+
+.Subscribers_But_options{/*Channalign-items: fel-Title의 하위 2번 Channel_Subscribes_Btn의 하위*/
     display: flex;
     padding: 10px 16px;
     align-items: flex-start;
     gap: 10px;
     border-radius: 2px;
     background: #C00;
+    color: var(--white-color, #FFF);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
 }
-.Channel_Cover {    /* .channel-container의 하위 3번 */
+
+#Channel_toolbar {    /* .channel-content의 하위 1번 */
     width: 100%;
-    height: 20%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    background-image: url("./image/Channel/Cover.svg");
-}
-
-
-.Smal_Video {    /* .channel-content의 하위 2번 */
-    width: 100%;
-    height: 35%;
-    padding: 24px 287px 24px 65px;
+    padding-left: 310px;
     align-items: flex-start;
 }
-.Player{/*Smal_Video의 하위 1번*/
+/* .Toolbars{  /* .channel-content의 하위 1번 Channel-Toolbar의 하위 1번*/
+    /* display: flex;
+    align-items: flex-start;
+} */
+.Channel_toolbars{/* .channel-content의 하위 1번 Channel-Toolbar의 하위 1번 Toolbars의 하위*/
     display: flex;
-    padding-right: 0px;
+    align-items: flex-start;
+    padding:0 64px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.Channeltoolbar-option{ /* .channel-content의 하위 1번 Channel-Toolbar의 하위 1번 Toolbars의 하위 Toolbar_Menu의 하위 1번*/
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 16px 32px;
+    color: #fff;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.CHanneltoolbar-option{ /* .channel-content의 하위 1번 Channel-Toolbar의 하위 1번 Toolbars의 하위 Toolbar_Menu의 하위 1번*/
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 16px 32px;
+    color: #AAAAAA;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+#Smallplayer {    /* .channel-content의 하위 2번 */
+    width: 100%;
+    height: 504px;
+    padding: 24px 250px 24px 250px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    background-color: #181818;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    border-bottom: #343434 1px solid;
+}
+.Smallplyer{/*Smal_Video의 하위 1번*/
+    display: flex;
+    padding-right: 24px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start;    
+    gap: 10px;   
+}
+.Smallplayer-info{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: 240px;
+    padding-top: 30px;
+}
+
+.Smallplayer-info .Smallplayer-info-title{
+    color: var(--white-color, #fff);
+    font-variant-numeric: stacked-fractions;
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 10px;
     gap: 10px;
 }
-.Youtube_Player{/*Smal_Video의 하위 1번 Player의 하위*/
-    width: 424px;
-    height: 238px;
+
+.Smallplayer-info-view{
+    color: #AAA;
+    font-size: 13px;
+    font-weight: 400;
+    padding-bottom: 10px;
 }
 
-
-.play-list-one {    /* .channel-content의 하위 3번 */
-    width: 100%;
-    height: 30%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 0px 65px 0px 65px;
+.Smallplayer-info .Smallplayer-info-text{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+    line-height: 20px;
 }
 
-.play-list-two {    /* .channel-content의 하위 4번 */
+/*
+padding: 24px 250px 24px 250px;
+align-items: flex-start;
+*/
+
+#Playlist{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    background-color: #181818;
+    box-sizing: border-box;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 24px 100px 24px 130px;
+}
+
+#Playlist-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#Playlist-title {    /* .channel-content의 하위 3번 */
+    width: 220px;
+    height: 30%;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding-left: 150px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+#Playlist-icon {    /* .channel-content의 하위 4번 */
     width: 100%;
     height: 30%;
+    color: #AAA;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 0px 65px 0px 65px;
+}
+#Playlist-icon > img {
+    margin-right: 10px;
+    color: #AAA;
+}
+
+#Video_Container_Line{
+    border-left: 55px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+#Video_Container_Line > div{
+    margin: 10px;
+
+}
+
+.thumbnail_desc_title {
+    color: var(--white-color, #fff);
 }
