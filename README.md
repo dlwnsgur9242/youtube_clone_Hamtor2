@@ -1,6 +1,5 @@
-# youtube_clone_Hamtor2
+# A YouTube clone coding project
 
-### 우리 햄톨2조🐹 다 같이 화이팅 해봐요!🌟
 ### 구현 동작 화면 
 https://youtu.be/0_yL9sjMN5A
 
